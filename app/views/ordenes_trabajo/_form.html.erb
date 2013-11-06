@@ -1,0 +1,225 @@
+<table>
+<tr>
+  <td><b>Cliente:</b></td>
+  <td><%= @cliente.nombre %></td>
+</tr>
+<tr>
+  <td><b>Domicilio:</b></td>
+  <td><%= @cliente.domicilio %></td>
+</tr>
+<tr>
+  <td><b>Teléfono:</b></td>
+  <td><%= @cliente.telefono %></td>
+</tr>
+<tr>
+  <td colspan="2"><br /><hr /><br /></td>
+</tr>
+<tr>
+  <td><b><%= form.label :descripcion, "Descripción:" %></b></td>
+  <td><%= form.text_field :descripcion %></td>
+</tr>
+<tr>
+  <td><b><%= form.label :fecha, "Fecha:" %></b></td>
+  <td><%= form.calendar_date_select :fecha, :popup => "force", :disabled => true, :size => 10 %></td>
+</tr>
+<tr>
+  <td><b><%= form.label :fecha_entrega, "Para el día:" %></b></td>
+  <td><%= form.calendar_date_select :fecha_entrega, :popup => "force", :disabled => true, :size => 10 %></td>
+</tr>
+<tr>
+  <td colspan="2"><br /><hr /><br /></td>
+</tr>
+<tr>
+  <td colspan="2"><b>LEJOS</b></td>
+</tr>
+<tr>
+  <td><b>Ojo derecho:</b></td>
+  <td>
+    <table>
+      <tr>
+        <td>Esf.</td>
+        <td><%= form.text_field :lejos_od_esferico, :value => '%+.2f' % @orden_trabajo.lejos_od_esferico, :size => 5 %></td>
+        <td>Cil.</td>
+        <td><%= form.text_field :lejos_od_cilindrico, :value => '%+.2f' % @orden_trabajo.lejos_od_cilindrico, :size => 5 %></td>
+        <td>en</td>
+        <td><%= form.text_field :lejos_od_grados, :size => 5 %></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td><b>Ojo izquierdo:</b></td>
+  <td>
+    <table>
+      <tr>
+      <tr>
+        <td>Esf.</td>
+        <td><%= form.text_field :lejos_oi_esferico, :value => '%+.2f' % @orden_trabajo.lejos_oi_esferico, :size => 5 %></td>
+        <td>Cil.</td>
+        <td><%= form.text_field :lejos_oi_cilindrico, :value => '%+.2f' % @orden_trabajo.lejos_oi_cilindrico, :size => 5 %></td>
+        <td>en</td>
+        <td><%= form.text_field :lejos_oi_grados, :size => 5 %></td>
+      </tr>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td><b><%= form.label :lejos_color, "Color:" %></b></td>
+  <td><%= form.text_field :lejos_color %></td>
+</tr>
+<tr>
+  <td><b><%= form.label :lejos_armazon, "Armazón Art.:" %></b></td>
+  <td><%= form.text_field :lejos_armazon %></td>
+</tr>
+<tr>
+  <td><b><%= form.label :lejos_tipo_lente, "Tipo de lente:" %></b></td>
+  <td><%= form.text_field :lejos_tipo_lente %></td>
+</tr>
+<tr>
+  <td><b><%= form.label :lejos_distancia_interpupilar, "Distancia interpupilar:" %></b></td>
+  <td><%= form.text_field :lejos_distancia_interpupilar %></td>
+</tr>
+<tr>
+  <td colspan="2"><br /><hr /><br /></td>
+</tr>
+<tr>
+  <td colspan="2"><b>INTERMEDIO</b></td>
+</tr>
+<tr>
+  <td><b>Ojo derecho:</b></td>
+  <td>
+    <table>
+      <tr>
+        <td>Esf.</td>
+        <td><%= form.text_field :intermedio_od_esferico, :value => '%+.2f' % @orden_trabajo.intermedio_od_esferico, :size => 5 %></td>
+        <td>Cil.</td>
+        <td><%= form.text_field :intermedio_od_cilindrico, :value => '%+.2f' % @orden_trabajo.intermedio_od_cilindrico, :size => 5 %></td>
+        <td>en</td>
+        <td><%= form.text_field :intermedio_od_grados, :size => 5 %></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td><b>Ojo izquierdo:</b></td>
+  <td>
+    <table>
+      <tr>
+      <tr>
+        <td>Esf.</td>
+        <td><%= form.text_field :intermedio_oi_esferico, :value => '%+.2f' % @orden_trabajo.intermedio_oi_esferico, :size => 5 %></td>
+        <td>Cil.</td>
+        <td><%= form.text_field :intermedio_oi_cilindrico, :value => '%+.2f' % @orden_trabajo.intermedio_oi_cilindrico, :size => 5 %></td>
+        <td>en</td>
+        <td><%= form.text_field :intermedio_oi_grados, :size => 5 %></td>
+      </tr>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td><b><%= form.label :intermedio_color, "Color:" %></b></td>
+  <td><%= form.text_field :intermedio_color %></td>
+</tr>
+<tr>
+  <td><b><%= form.label :intermedio_armazon, "Armazón Art.:" %></b></td>
+  <td><%= form.text_field :intermedio_armazon %></td>
+</tr>
+<tr>
+  <td><b><%= form.label :intermedio_tipo_lente, "Tipo de lente:" %></b></td>
+  <td><%= form.text_field :intermedio_tipo_lente %></td>
+</tr>
+<tr>
+  <td><b><%= form.label :intermedio_distancia_interpupilar, "Distancia interpupilar:" %></b></td>
+  <td><%= form.text_field :intermedio_distancia_interpupilar %></td>
+</tr>
+<tr>
+  <td colspan="2"><br /><hr /><br /></td>
+</tr>
+<tr>
+  <td colspan="2"><b>CERCA</b></td>
+</tr>
+<tr>
+  <td><b>Ojo derecho:</b></td>
+  <td>
+    <table>
+      <tr>
+        <td>Esf.</td>
+        <td><%= form.text_field :cerca_od_esferico, :value => '%+.2f' % @orden_trabajo.cerca_od_esferico, :size => 5 %></td>
+        <td>Cil.</td>
+        <td><%= form.text_field :cerca_od_cilindrico, :value => '%+.2f' % @orden_trabajo.cerca_od_cilindrico, :size => 5 %></td>
+        <td>en</td>
+        <td><%= form.text_field :cerca_od_grados, :size => 5 %></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td><b>Ojo izquierdo:</b></td>
+  <td>
+    <table>
+      <tr>
+      <tr>
+        <td>Esf.</td>
+        <td><%= form.text_field :cerca_oi_esferico, :value => '%+.2f' % @orden_trabajo.cerca_oi_esferico, :size => 5 %></td>
+        <td>Cil.</td>
+        <td><%= form.text_field :cerca_oi_cilindrico, :value => '%+.2f' % @orden_trabajo.cerca_oi_cilindrico, :size => 5 %></td>
+        <td>en</td>
+        <td><%= form.text_field :cerca_oi_grados, :size => 5 %></td>
+      </tr>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td><b><%= form.label :cerca_color, "Color:" %></b></td>
+  <td><%= form.text_field :cerca_color %></td>
+</tr>
+<tr>
+  <td><b><%= form.label :cerca_armazon, "Armazón Art.:" %></b></td>
+  <td><%= form.text_field :cerca_armazon %></td>
+</tr>
+<tr>
+  <td><b><%= form.label :cerca_tipo_lente, "Tipo de lente:" %></b></td>
+  <td><%= form.text_field :cerca_tipo_lente %></td>
+</tr>
+<tr>
+  <td><b><%= form.label :cerca_distancia_interpupilar, "Distancia interpupilar:" %></b></td>
+  <td><%= form.text_field :cerca_distancia_interpupilar %></td>
+</tr>
+<tr>
+  <td colspan="2"><br /><hr /><br /></td>
+</tr>
+<tr>
+  <td><b><%= form.label :bifocal, "Bifocal:" %></b></td>
+  <td><%= form.text_field :bifocal %></td>
+</tr>
+<tr>
+  <td><b><%= form.label :altura, "Altura:" %></b></td>
+  <td><%= form.text_field :altura %></td>
+</tr>
+<tr>
+  <td colspan="2"><br /><hr /><br /></td>
+</tr>
+<tr>
+  <td valign="top"><b><%= form.label :observaciones, "Observaciones:" %></b></td>
+  <td><%= form.text_area :observaciones, :cols => 35, :rows => 5 %></td>
+</tr>
+<tr>
+  <td><b><%= form.label :nombre_doctor, "Receta Dr:" %></b></td>
+  <td><%= form.text_field :nombre_doctor %></td>
+</tr>
+<tr>
+  <td><b><%= form.label :fecha_receta, "Fecha de la receta:" %></b></td>
+  <td><%= form.calendar_date_select :fecha_receta, :popup => "force", :disabled => true, :size => 10 %></td>
+</tr>
+<tr>
+  <td><b><%= form.label :total, "Total:" %></b></td>
+  <td><%= form.text_field :total %></td>
+</tr>
+<tr>
+  <td><b><%= form.label :senya, "Seña:" %></b></td>
+  <td><%= form.text_field :senya %></td>
+</tr>
+</table>

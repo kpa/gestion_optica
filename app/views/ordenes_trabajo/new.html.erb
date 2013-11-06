@@ -1,0 +1,11 @@
+<% @title = "Nueva órden de trabajo" %>
+<% @navbar = [link_to("Clientes", clientes_path), link_to("Órdenes de trabajo", cliente_ordenes_trabajo_path(@cliente)), @title ] %>
+
+<%= error_messages_for :orden_trabajo %>
+
+<% form_for([@cliente, @orden_trabajo]) do |form| %>
+  <%= render :partial => 'form', :object => form %>
+  <%= form.submit "Crear" %>
+<% end %>
+
+<%= link_to 'Atrás', cliente_ordenes_trabajo_path %>

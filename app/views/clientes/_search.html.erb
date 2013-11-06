@@ -1,0 +1,28 @@
+<table width="100%">
+  <tr>
+    <th>Nombre</th>
+    <th>Apellidos</th>
+    <th>Domicilio</th>
+    <th>Télefono</th>
+    <th>Correo electrónico</th>
+    <th>Localidad</th>
+  </tr>
+
+<% for cliente in @clientes %>
+  <tr>
+    <td><%=h cliente.nombre %></td>
+    <td><%=h cliente.apellidos %></td>
+    <td><%=h cliente.domicilio %></td>
+    <td><%=h cliente.telefono %></td>
+    <td><%=h cliente.correo_electronico %></td>
+    <td><%=h cliente.localidad %></td>
+    <td style="margin: 2px; padding: 2px"><%= link_to 'Ver', cliente %></td>
+    <td style="margin: 2px; padding: 2px"><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
+    <td style="margin: 2px; padding: 2px"><%= link_to 'Borrar', cliente, :confirm => "¿Está seguro de borrar al cliente #{cliente.nombre}?", :method => :delete %></td>
+    <td style="margin: 2px; padding: 2px;border-width: 1px; border-style: solid"><%= link_to 'Órdenes de trabajo', cliente_ordenes_trabajo_path(cliente) %></td>
+  </tr>
+<% end %>
+</table>
+
+<% params[:action] = "index" %>
+<%= will_paginate @clientes, :prev_label => "&laquo; Anterior", :next_label => "Siguiente &raquo;" %>

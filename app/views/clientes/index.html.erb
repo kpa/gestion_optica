@@ -1,0 +1,10 @@
+<% @navbar = @title = "Clientes" %>
+
+<%= render :partial => "shared/search_field" %>
+<div id="search_results">
+  <%= render :partial => "search" %>
+</div>
+
+<br />
+<%= link_to 'Nuevo cliente', new_cliente_path %>
+

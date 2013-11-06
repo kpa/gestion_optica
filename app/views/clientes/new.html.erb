@@ -1,0 +1,12 @@
+<% @title = "Nuevo cliente" %>
+<% @navbar = [link_to("Clientes", clientes_path), @title ] %>
+
+<%= error_messages_for :cliente %>
+
+
+<% form_for(@cliente) do |form| %>
+  <%= render :partial => 'form', :object => form %>
+  <%= form.submit "Crear" %>
+<% end %>
+
+<%= link_to 'Atrás', clientes_path %>

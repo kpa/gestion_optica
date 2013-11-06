@@ -1,0 +1,67 @@
+<% @title = "Importar fichero CSV con órdenes de trabajo" %>
+<% @navbar = [link_to("Clientes", clientes_path), link_to("Órdenes de trabajo", cliente_ordenes_trabajo_path(@cliente)), @title ] %>
+
+<%= error_messages_for :orden_trabajo %>
+
+<div class="fieldsExplanation">
+  <h2>COLUMNAS QUE DEBERÁ CONTENER EL FICHERO CSV Y ÓRDEN DE DICHAS COLUMNAS</h2>
+  <ul>
+    <li>Nombre del cliente</li>
+    <li>Descripción de la órden</li>
+    <li>Fecha</li>
+    <li>Para el día</li>
+    <li>LEJOS Ojo derecho Esf.</li>
+    <li>LEJOS Ojo derecho Cil.</li>
+    <li>LEJOS Ojo derecho en</li>
+    <li>LEJOS Ojo izquierdo Esf.</li>
+    <li>LEJOS Ojo izquierdo Cil.</li>
+    <li>LEJOS Ojo izquierdo en</li>
+    <li>LEJOS Color</li>
+    <li>LEJOS Armazón Art.</li>
+    <li>LEJOS Tipo de lente</li>
+    <li>LEJOS Distancia interpupilar</li>
+
+    <li>INTERMEDIO Ojo derecho Esf.</li>
+    <li>INTERMEDIO Ojo derecho Cil.</li>
+    <li>INTERMEDIO Ojo derecho en</li>
+    <li>INTERMEDIO Ojo izquierdo Esf.</li>
+    <li>INTERMEDIO Ojo izquierdo Cil.</li>
+    <li>INTERMEDIO Ojo izquierdo en</li>
+    <li>INTERMEDIO Color</li>
+    <li>INTERMEDIO Armazón Art.</li>
+    <li>INTERMEDIO Tipo de lente</li>
+    <li>INTERMEDIO Distancia interpupilar</li>
+
+    <li>CERCA Ojo derecho Esf.</li>
+    <li>CERCA Ojo derecho Cil.</li>
+    <li>CERCA Ojo derecho en</li>
+    <li>CERCA Ojo izquierdo Esf.</li>
+    <li>CERCA Ojo izquierdo Cil.</li>
+    <li>CERCA Ojo izquierdo en</li>
+    <li>CERCA Color</li>
+    <li>CERCA Armazón Art.</li>
+    <li>CERCA Tipo de lente</li>
+    <li>CERCA Distancia interpupilar</li>
+
+    <li>Bifocal</li>
+    <li>Altura</li>
+
+    <li>Observaciones</li>
+    <li>Receta Dr</li>
+    <li>Total</li>
+    <li>Seña</li>
+    <li>Teléfono</li>
+    <li>Fecha de la receta</li>
+  </ul>
+</div>
+<% form_tag({:action => :load_ordenes_trabajo_file}, :multipart => true) do %>
+<table>
+<tr>
+  <td><b><%= label_tag :import_file, "Fichero CSV:" %></b></td>
+  <td><%= file_field_tag :import_file %></td>
+</tr>
+</table>
+<%= submit_tag "Importar" %>
+<% end %>
+
+<%= link_to 'Atrás', :back %>

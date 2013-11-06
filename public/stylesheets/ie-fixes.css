@@ -1,0 +1,17 @@
+/* content */
+.content {
+	height: 390px;
+}
+
+/* Breadcrumb */
+.navlist { height: 1%; }
+.navlist li
+{
+display: block;
+float: left;
+background-image: url("/images/gt.gif");
+background-repeat: no-repeat;
+background-position: 0 50%;
+padding: 0 0.5em 0 1em;
+margin: 0 1em 0 -1em;
+}

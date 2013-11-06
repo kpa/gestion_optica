@@ -1,0 +1,12 @@
+Buscar: <%= text_field_tag 'search', params[:search], :size => 20 %>
+<%= image_tag("loading.gif", :id => "loader", :style => "display: none") %>
+<br /><br />
+<%= observe_field :search,
+                  :frequency => 1,
+                  :update => 'search_results',
+                  :url => {:action => 'find_items', :only_path => true},
+                  :method => "get",
+                  :with => "'search=' + encodeURIComponent(value)",
+                  :before => "Element.show('loader')",
+                  :complete => "Element.hide('loader')"
+%>

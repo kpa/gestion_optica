@@ -1,0 +1,11 @@
+<% @title = "Órdenes de trabajo" %>
+<% @navbar = [link_to("Clientes", clientes_path), @title ] %>
+
+
+<%= render :partial => "shared/search_field" %>
+<%= link_to 'Nueva órden de trabajo', new_cliente_orden_trabajo_path(@cliente) %>
+<br />
+<div id="search_results">
+  <%= render :partial => "search" %>
+</div>
+

@@ -1,0 +1,36 @@
+<% @title = "Mostrar cliente" %>
+<% @navbar = [link_to("Clientes", clientes_path), @title ] %>
+
+<a class="print_link" href="javascript:window.print()">Imprimir cliente</a>
+
+<table>
+<tr>
+  <td><b>Nombre:</b></td>
+  <td><%= h @cliente.nombre %></td>
+</tr>
+<tr>
+  <td><b>Apellidos:</b></td>
+  <td><%= h @cliente.apellidos %></td>
+</tr>
+<tr>
+  <td><b>Domicilio:</b></td>
+  <td><%= h @cliente.domicilio %></td>
+</tr>
+<tr>
+  <td><b>Teléfono:</b></td>
+  <td><%= h @cliente.telefono %></td>
+</tr>
+<tr>
+  <td><b>Correo electrónico:</b></td>
+  <td><%= h @cliente.correo_electronico %></td>
+</tr>
+<tr>
+  <td><b>Localidad:</b></td>
+  <td><%= h @cliente.localidad %></td>
+</tr>
+</table>
+
+<div class="print_link">
+  <%= link_to 'Editar', edit_cliente_path(@cliente) %> |
+  <%= link_to 'Atrás', clientes_path %>
+</div>

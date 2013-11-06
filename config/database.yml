@@ -1,0 +1,23 @@
+defaults: &defaults
+  adapter: mysql
+  encoding: utf8
+  username: arena
+  password: oarena4121
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  database: opticaarena_dev
+  <<: *defaults
+
+test:
+  database: opticaarena_test
+  <<: *defaults
+
+production:
+  adapter: mysql
+  database: opticaarena_prod
+  encoding: utf8
+  username: arena
+  password: oarena4121
+  host: mysql.opticaarena.com.ar
+

@@ -1,0 +1,394 @@
+/*#############################################################
+Name: Transparentia
+Date: 2006-08-20
+Description: Simple, lightweight and slightly blue.
+Author: Viktor Persson
+URL: http://templates.arcsin.se
+
+Feel free to use and modify but please provide credits.
+#############################################################*/
+
+/* standard elements */
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	color: #36C;
+}
+a:hover {
+	color: #06F;
+}
+body {
+	background: #EEE url(/images/bg.gif);
+/*	color: #444; */
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	margin: 0;
+}
+
+input {
+	color: #666;
+	background: transparent;
+	border: 1px solid;
+}
+
+p,cite,code,ul {
+	font-size: 1em;
+	padding-bottom: 1.2em;
+}
+h1 {
+	font-size: 1em;
+	margin-bottom: 4px;
+}
+code {
+	background: url(/images/bgcode.gif);
+	border: 1px solid #F0F0F0;
+	border-left: 6px solid #39F;
+	color: #555;
+	display: block;
+	font-style:normal;
+	font-size: 0.9em;
+	margin-bottom: 12px;
+	padding: 8px 10px;
+	white-space: pre;
+}
+cite {
+	background: url(/images/quote.gif) no-repeat;
+	color: #666;
+	display: block;
+	padding-left: 28px;
+	font-style:normal;
+}
+h1,h2,h3 {
+	color: #367EA6;
+	padding-top: 6px;
+}
+
+/* structure */
+.container {
+	background: white;
+	margin: 0 auto;
+	padding-bottom: 6px;
+	width: 867px;
+}
+.header {
+	background: url(/images/header.gif) repeat-x;
+}
+
+/* title */
+.title h1 {
+	color: #FFF;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 23pt;
+	font-weight: normal;
+	height: 150px;
+	line-height: 150px;
+	margin-bottom: 8px;
+	text-align: center;
+}
+
+/* navigation */
+.navigation {
+	padding: 6px 12px;
+	border: 1px solid #EEE;
+	background: #FFF;
+	margin-bottom: 8px;
+}
+.navigation a {
+	color: #777;
+	text-decoration: none;
+}
+.navigation a:hover {
+	color: #111;
+}
+
+/* Breadcrumb */
+.navlist {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.navlist li {
+	display: inline;
+	padding: 0;
+	margin: 0;
+}
+
+.navlist li:before { content: " > "; }
+.navlist li:first-child:before { content: ""; }
+
+/* main */
+.main {
+	padding: 8px 18px;
+	overflow:hidden;
+}
+
+/* main left */
+.sidenav h1,.sidenav ul {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+.sidenav {
+	background: #EEE;
+	border: 1px solid #E5E5E5;
+	float: left;
+	width: 200px;
+}
+.sidenav h1 {
+	color: #666;
+	font-size: 1em;
+	height: 20px;
+/*	margin-top: 1.2em; */
+/*	margin-top: 0.6em; */
+	margin-top: 8px;
+}
+.sidenav ul {
+	border-top: 1px solid #FAFAFA;
+	background: #EEE url(/images/bgul.gif) repeat-x;
+	margin: 0;
+	padding: 0;
+}
+.sidenav li {
+	font-size: 8pt;
+	border: 1px solid #FAFAFA;
+	border-top: none;
+	list-style: none;
+	margin: 0;
+}
+.sidenav li a {
+	color: #777;
+	display: block;
+	padding: 3px 6px 3px 14px;
+	text-decoration: none;
+}
+.sidenav li a:hover {
+	color: #111;
+}
+
+/* content */
+.content {
+	float: right;
+	width: 620px;
+	min-height: 370px;
+}
+
+.content .title {
+/*	padding: 1.1em 0.9em 0.5em; */
+	padding: 14px 12px 6px;
+	border: 1px solid #EEE;
+	background: #FFF;
+	margin-bottom: 8px;
+	color: #367EA6;
+	font-weight: bold;
+}
+
+.content .item {
+	padding: 10px 12px;
+	border: 1px solid #EEE;
+	background: #FFF;
+	margin-bottom: 8px;
+}
+.content .descr {
+	color: #333;
+	margin-bottom: 6px;
+	font-size: 0.8em;
+}
+
+.errorExplanation {
+	padding: 10px 62px 10px;
+	border: 1px solid #A22;
+	background: #FDD;
+	font-size: 0.8em;
+	margin-bottom: 8px;
+	background-image: url(/images/cancel.png);
+	background-repeat: no-repeat;
+	background-position: 2% 50%;
+}
+.errorExplanation h2 {
+	font-size: 1em;
+	margin-bottom: 4px;
+	color: #A22;
+	padding-top: 6px;
+}
+.errorExplanation ul {
+	padding-bottom: 0px;
+}
+
+.errorExplanation li {
+	list-style-image: none;
+	list-style-type: disc;
+}
+
+.fieldWithErrors input {
+	border: 1px solid #F99;
+	background: #FDD;
+
+}
+
+.fieldWithErrors {
+  padding: 2px;
+  display:inline;
+}
+
+
+.noticeExplanation {
+  padding: 10px 62px 10px;
+  border: 1px solid #2A2;
+  background: #DFD;
+  font-size: 0.8em;
+  margin-bottom: 8px;
+  background-image: url(/images/apply.png);
+  background-repeat: no-repeat;
+  background-position: 2% 50%;
+
+}
+.noticeExplanation h2 {
+  font-size: 1em;
+  margin-bottom: 4px;
+  color: #2A2;
+  padding-top: 6px;
+}
+
+.warningExplanation {
+  padding: 10px 62px 10px;
+  border: 1px solid #A22;
+  background: #FDD;
+  font-size: 0.8em;
+  margin-bottom: 8px;
+  background-image: url(/images/cancel.png);
+  background-repeat: no-repeat;
+  background-position: 2% 50%;
+}
+.warningExplanation h2 {
+  font-size: 1em;
+  margin-bottom: 4px;
+  color: #A22;
+  padding-top: 6px;
+}
+
+.messageExplanation {
+  padding: 10px 62px 10px;
+  border: 1px solid #22A;
+  background: #DDF;
+  font-size: 0.8em;
+  margin-bottom: 8px;
+  background-image: url(/images/messagebox_info.png);
+  background-repeat: no-repeat;
+  background-position: 2% 50%;
+}
+.messageExplanation h2 {
+  font-size: 1em;
+  margin-bottom: 4px;
+  color: #22A;
+  padding-top: 6px;
+}
+
+/* search form */
+/*
+form {
+	padding: 0 0 6px 8px;
+}
+*/
+
+/* forms */
+.form-left {
+	float: left;
+	width: 110pt
+}
+
+.form-right {
+	margin-bottom: 15px;
+}
+.styled {
+	border: 1px solid #DDD;
+	padding: 4px;
+}
+.button {
+	background: url(/images/search.gif) no-repeat left bottom;
+	border: none;
+	height: 27px;
+	width: 27px;
+}
+
+#loader {
+  visibility: hidden;
+}
+/* footer */
+.footer {
+	background: #FFF;
+	border: 1px solid #EEE;
+	color: #666;
+	font-size: 8.5pt;
+	margin: 0 auto;
+	text-align: center;
+	width: 720px;
+	overflow:hidden;
+}
+.footer a {
+	color: #36C;
+	text-decoration: none;
+}
+.footer a:hover {
+	color: #06F;
+	text-decoration: underline;
+}
+.footer .left, .footer .right {padding: 6px 12px;}
+
+/* floats */
+.left {float: left;}
+.right {float: right;}
+
+.pagination {
+  padding: 3px;
+  margin: 3px;
+}
+.pagination a {
+  padding: 2px 5px 2px 5px;
+  margin: 2px;
+  border: 1px solid #aaa;
+  text-decoration: none;
+  color: #000;
+}
+.pagination a:hover, .pagination a:active {
+  border: 1px solid #000;
+  color: #000;
+  background-color: #EEE;
+}
+.pagination span.current {
+  padding: 2px 5px 2px 5px;
+  margin: 2px;
+  border: 1px solid #000;
+  font-weight: bold;
+  background-color: #CCC;
+  color: #000;
+}
+.pagination span.disabled {
+  padding: 2px 5px 2px 5px;
+  margin: 2px;
+  border: 1px solid #555;
+  color: #444;
+}
+
+.fieldsExplanation {
+  padding: 10px 10px 10px;
+  border: 1px solid #AA2;
+  background: #FFD;
+  font-size: 0.8em;
+  margin: 8px 0px;
+  background-repeat: no-repeat;
+  background-position: 2% 50%;
+  width: 95%;
+ 
+}
+.fieldsExplanation h2 {
+  font-size: 1em;
+  margin-bottom: 4px;
+  color: #AA2;
+  padding-top: 6px;
+}
+.fieldsExplanation ul, .fieldsExplanation ol {
+  padding-left: 40px;
+}
+
