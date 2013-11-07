@@ -5,11 +5,11 @@
 <head>
   <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
   <%= stylesheet_link_tag 'application', :media => :screen %>
-  <%= stylesheet_link_tag 'print', :media => :print %>
+  <%= stylesheet_link_tag 'application-print', :media => :print %>
   <%= javascript_include_tag 'application' %>
   <%= calendar_date_select_includes :locale => :es %>
   <!--[if gte IE 5]>
-    <%= stylesheet_link_tag "ie-fixes", :media => :screen %>
+    <%= stylesheet_link_tag "application-ie", :media => :screen %>
     <![endif]-->
   <title>
     <%=
