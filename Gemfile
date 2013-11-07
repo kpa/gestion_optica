@@ -37,3 +37,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug'
+
+# Annotate models
+gem "annotate", "~> 2.5.0"
