@@ -43,3 +43,6 @@ gem "annotate", "~> 2.5.0"
 
 # Calendar date select
 gem 'calendar_date_select'
+
+# Will paginate
+gem 'will_paginate', '~> 3.0.5'
