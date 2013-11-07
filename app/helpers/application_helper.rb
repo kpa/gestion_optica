@@ -1,6 +1,4 @@
-# Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
-
   def site_name
     "Óptica"
   end
@@ -29,7 +27,7 @@ module ApplicationHelper
   def current_user
     #User.find(:first, :conditions => ['id = ?', session[:user_id]])
   end
-  
+
   # Creates a label tag.
   #   label_tag('post_title', 'Title')
   #     <label for="post_title">Title</label>
