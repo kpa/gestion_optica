@@ -42,7 +42,7 @@ gem 'jquery-rails'
 gem "annotate", "~> 2.5.0"
 
 # Calendar date select
-gem 'calendar_date_select'
+gem 'calendar_date_select', :git => 'git://github.com/paneq/calendar_date_select.git'
 
 # Will paginate
 gem 'will_paginate', '~> 3.0.5'

@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/paneq/calendar_date_select.git
+  revision: 977048211b94599fe0f08eb37a481f3d69df48f6
+  specs:
+    calendar_date_select (1.16.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -32,8 +38,6 @@ GEM
       rake
     arel (3.0.2)
     builder (3.0.4)
-    calendar_date_select (2.0.0)
-      rails (>= 3.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -108,7 +112,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (~> 2.5.0)
-  calendar_date_select
+  calendar_date_select!
   coffee-rails (~> 3.2.1)
   jquery-rails
   json
