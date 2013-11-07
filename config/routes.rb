@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 GestionOpticaArena::Application.routes.draw do
   resources :ordenes_trabajo do
     collection do

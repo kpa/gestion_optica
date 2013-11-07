@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddCorreoElectronicoToCliente < ActiveRecord::Migration
   def self.up
     add_column :clientes, :correo_electronico, :string

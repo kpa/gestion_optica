@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateOrdenesTrabajo < ActiveRecord::Migration
   def self.up
     create_table :ordenes_trabajo do |t|

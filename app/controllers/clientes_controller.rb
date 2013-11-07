@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ClientesController < ApplicationController
   # GET /clientes
   # GET /clientes.xml

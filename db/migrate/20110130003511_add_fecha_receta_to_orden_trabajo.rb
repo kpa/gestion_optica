@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddFechaRecetaToOrdenTrabajo < ActiveRecord::Migration
   def self.up
     add_column :ordenes_trabajo, :fecha_receta, :date

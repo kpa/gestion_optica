@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateClientes < ActiveRecord::Migration
   def self.up
     create_table :clientes do |t|

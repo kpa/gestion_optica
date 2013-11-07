@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ConvierteGradosDeDecimalAInteger < ActiveRecord::Migration
   def self.up
     change_column :ordenes_trabajo, :lejos_od_grados, :integer, :default => 0

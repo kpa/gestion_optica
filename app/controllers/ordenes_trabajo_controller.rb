@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class OrdenesTrabajoController < ApplicationController
 
   before_filter :find_cliente
