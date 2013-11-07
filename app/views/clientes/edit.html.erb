@@ -3,7 +3,7 @@
 
 <%= error_messages_for :cliente %>
 
-<% form_for(@cliente) do |form| %>
+<%= form_for(@cliente) do |form| %>
   <%= render :partial => 'form', :object => form %>
   <%= form.submit "Editar" %>
 <% end %>

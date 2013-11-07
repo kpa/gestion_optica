@@ -54,7 +54,7 @@
     <li>Fecha de la receta</li>
   </ul>
 </div>
-<% form_tag({:action => :load_ordenes_trabajo_file}, :multipart => true) do %>
+<%= form_tag({:action => :load_ordenes_trabajo_file}, :multipart => true) do %>
 <table>
 <tr>
   <td><b><%= label_tag :import_file, "Fichero CSV:" %></b></td>
