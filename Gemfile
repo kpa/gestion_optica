@@ -40,3 +40,6 @@ gem 'jquery-rails'
 
 # Annotate models
 gem "annotate", "~> 2.5.0"
+
+# Calendar date select
+gem 'calendar_date_select'
