@@ -3,12 +3,15 @@
   jQuery(function($) {
 // when the #search field changes
     $("#search").bind( 'keyup', function() {
-      $('#loader').show();
-// make a POST call and replace the content
-      $.get('<%= url_for({:action => 'find_items', :only_path => true}) %>', {search: $("#search").val()}, function(data) {
-        $("#search_results").html(data);
-        $('#loader').hide();
-      });
+      clearTimeout(window.searchTimeout)
+      window.searchTimeout = setTimeout(function() {
+        $('#loader').show();
+        // make a POST call and replace the content
+        $.get('<%= url_for({:action => 'find_items', :only_path => true}) %>', {search: $("#search").val()}, function(data) {
+          $("#search_results").html(data);
+          $('#loader').hide();
+        });
+      }, 500);
     });
   })
 </script>

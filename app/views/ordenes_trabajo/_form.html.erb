@@ -20,11 +20,11 @@
 </tr>
 <tr>
   <td><b><%= form.label :fecha, "Fecha:" %></b></td>
-  <td><%= form.calendar_date_select :fecha, :popup => "force", :disabled => true, :size => 10 %></td>
+  <td><%= form.text_field :fecha, size: 10, class: 'datepicker' %></td>
 </tr>
 <tr>
   <td><b><%= form.label :fecha_entrega, "Para el día:" %></b></td>
-  <td><%= form.calendar_date_select :fecha_entrega, :popup => "force", :disabled => true, :size => 10 %></td>
+  <td><%= form.text_field :fecha_entrega, size: 10, class: 'datepicker' %></td>
 </tr>
 <tr>
   <td colspan="2"><br /><hr /><br /></td>
@@ -212,7 +212,7 @@
 </tr>
 <tr>
   <td><b><%= form.label :fecha_receta, "Fecha de la receta:" %></b></td>
-  <td><%= form.calendar_date_select :fecha_receta, :popup => "force", :disabled => true, :size => 10 %></td>
+  <td><%= form.text_field :fecha_receta, size: 10, class: 'datepicker' %></td>
 </tr>
 <tr>
   <td><b><%= form.label :total, "Total:" %></b></td>

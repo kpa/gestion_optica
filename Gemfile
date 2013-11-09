@@ -41,8 +41,8 @@ gem 'jquery-rails'
 # Annotate models
 gem "annotate", "~> 2.5.0"
 
-# Calendar date select
-gem 'calendar_date_select', :git => 'git://github.com/paneq/calendar_date_select.git'
-
 # Will paginate
 gem 'will_paginate', '~> 3.0.5'
+
+gem 'dynamic_form'
+gem 'jquery-ui-rails'
