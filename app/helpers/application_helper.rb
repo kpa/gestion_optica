@@ -14,7 +14,7 @@ module ApplicationHelper
     for name in flash_names
       if flash[name]
         output << "<div class=\"#{name}Explanation\">"
-        unless flash[name][:header].blank?
+        if flash[name].is_a?(Hash) && flash[name][:header]
           output << "<h2>#{flash[name][:header]}</h2>"
           output << "<p>#{flash[name][:body]}</p>"
         else
@@ -23,7 +23,7 @@ module ApplicationHelper
         output << "</div>"
       end
     end
-    return output
+    return raw(output)
   end
   def current_user
     #User.find(:first, :conditions => ['id = ?', session[:user_id]])
