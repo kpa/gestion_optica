@@ -1,19 +1,8 @@
-# -*- encoding : utf-8 -*-
-require File.dirname(__FILE__) + '/../test_helper'
-
-class ClienteTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  def test_truth
-    assert true
-  end
-end
-
-
 # == Schema Information
 #
 # Table name: clientes
 #
-#  id                 :integer(4)      not null, primary key
+#  id                 :integer          not null, primary key
 #  nombre             :string(255)
 #  domicilio          :string(255)
 #  telefono           :string(255)
@@ -23,4 +12,14 @@ end
 #  apellidos          :string(255)
 #  correo_electronico :string(255)
 #
+
+# -*- encoding : utf-8 -*-
+require File.dirname(__FILE__) + '/../test_helper'
+
+class ClienteTest < ActiveSupport::TestCase
+  # Replace this with your real tests.
+  def test_truth
+    assert true
+  end
+end
 

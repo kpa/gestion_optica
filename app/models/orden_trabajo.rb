@@ -1,3 +1,55 @@
+# == Schema Information
+#
+# Table name: ordenes_trabajo
+#
+#  id                                :integer          not null, primary key
+#  descripcion                       :string(255)
+#  fecha                             :date
+#  fecha_entrega                     :date
+#  numero                            :integer
+#  lejos_od_esferico                 :decimal(10, 2)   default(0.0)
+#  lejos_od_cilindrico               :decimal(10, 2)   default(0.0)
+#  lejos_od_grados                   :integer          default(0)
+#  lejos_oi_esferico                 :decimal(10, 2)   default(0.0)
+#  lejos_oi_cilindrico               :decimal(10, 2)   default(0.0)
+#  lejos_oi_grados                   :integer          default(0)
+#  lejos_distancia_interpupilar      :decimal(10, 2)   default(0.0)
+#  lejos_color                       :string(255)
+#  lejos_armazon                     :string(255)
+#  lejos_tipo_lente                  :string(255)
+#  cerca_od_esferico                 :decimal(10, 2)   default(0.0)
+#  cerca_od_cilindrico               :decimal(10, 2)   default(0.0)
+#  cerca_od_grados                   :integer          default(0)
+#  cerca_oi_esferico                 :decimal(10, 2)   default(0.0)
+#  cerca_oi_cilindrico               :decimal(10, 2)   default(0.0)
+#  cerca_oi_grados                   :integer          default(0)
+#  cerca_distancia_interpupilar      :decimal(10, 2)   default(0.0)
+#  cerca_color                       :string(255)
+#  cerca_armazon                     :string(255)
+#  cerca_tipo_lente                  :string(255)
+#  intermedio_od_esferico            :decimal(10, 2)   default(0.0)
+#  intermedio_od_cilindrico          :decimal(10, 2)   default(0.0)
+#  intermedio_od_grados              :integer          default(0)
+#  intermedio_oi_esferico            :decimal(10, 2)   default(0.0)
+#  intermedio_oi_cilindrico          :decimal(10, 2)   default(0.0)
+#  intermedio_oi_grados              :integer          default(0)
+#  intermedio_distancia_interpupilar :decimal(10, 2)   default(0.0)
+#  intermedio_color                  :string(255)
+#  intermedio_armazon                :string(255)
+#  intermedio_tipo_lente             :string(255)
+#  bifocal                           :string(255)
+#  altura                            :decimal(10, 2)   default(0.0)
+#  observaciones                     :string(255)
+#  total                             :decimal(10, 2)   default(0.0)
+#  senya                             :decimal(10, 2)   default(0.0)
+#  saldo                             :decimal(10, 2)   default(0.0)
+#  nombre_doctor                     :string(255)
+#  cliente_id                        :integer
+#  created_at                        :datetime
+#  updated_at                        :datetime
+#  fecha_receta                      :date
+#
+
 # -*- encoding : utf-8 -*-
 class OrdenTrabajo < ActiveRecord::Base
   attr_accessible :descripcion, :fecha, :fecha_entrega, :lejos_od_esferico, :lejos_od_cilindrico, :lejos_od_grados, :lejos_oi_esferico, :lejos_oi_cilindrico, :lejos_oi_grados, :lejos_color, :lejos_armazon, :lejos_tipo_lente, :lejos_distancia_interpupilar, :intermedio_od_esferico, :intermedio_od_cilindrico, :intermedio_od_grados, :intermedio_oi_esferico, :intermedio_oi_cilindrico, :intermedio_oi_grados, :intermedio_color, :intermedio_armazon, :intermedio_tipo_lente, :intermedio_distancia_interpupilar, :cerca_od_esferico, :cerca_od_cilindrico, :cerca_od_grados, :cerca_oi_esferico, :cerca_oi_cilindrico, :cerca_oi_grados, :cerca_color, :cerca_armazon, :cerca_tipo_lente, :cerca_distancia_interpupilar, :bifocal, :altura, :observaciones, :nombre_doctor, :fecha_receta, :total, :senya
@@ -24,57 +76,4 @@ class OrdenTrabajo < ActiveRecord::Base
   end
 end
 
-
-
-# == Schema Information
-#
-# Table name: ordenes_trabajo
-#
-#  id                                :integer(4)      not null, primary key
-#  descripcion                       :string(255)
-#  fecha                             :date
-#  fecha_entrega                     :date
-#  numero                            :integer(4)
-#  lejos_od_esferico                 :decimal(10, 2)  default(0.0)
-#  lejos_od_cilindrico               :decimal(10, 2)  default(0.0)
-#  lejos_od_grados                   :integer(4)      default(0)
-#  lejos_oi_esferico                 :decimal(10, 2)  default(0.0)
-#  lejos_oi_cilindrico               :decimal(10, 2)  default(0.0)
-#  lejos_oi_grados                   :integer(4)      default(0)
-#  lejos_distancia_interpupilar      :decimal(10, 2)  default(0.0)
-#  lejos_color                       :string(255)
-#  lejos_armazon                     :string(255)
-#  lejos_tipo_lente                  :string(255)
-#  cerca_od_esferico                 :decimal(10, 2)  default(0.0)
-#  cerca_od_cilindrico               :decimal(10, 2)  default(0.0)
-#  cerca_od_grados                   :integer(4)      default(0)
-#  cerca_oi_esferico                 :decimal(10, 2)  default(0.0)
-#  cerca_oi_cilindrico               :decimal(10, 2)  default(0.0)
-#  cerca_oi_grados                   :integer(4)      default(0)
-#  cerca_distancia_interpupilar      :decimal(10, 2)  default(0.0)
-#  cerca_color                       :string(255)
-#  cerca_armazon                     :string(255)
-#  cerca_tipo_lente                  :string(255)
-#  intermedio_od_esferico            :decimal(10, 2)  default(0.0)
-#  intermedio_od_cilindrico          :decimal(10, 2)  default(0.0)
-#  intermedio_od_grados              :integer(4)      default(0)
-#  intermedio_oi_esferico            :decimal(10, 2)  default(0.0)
-#  intermedio_oi_cilindrico          :decimal(10, 2)  default(0.0)
-#  intermedio_oi_grados              :integer(4)      default(0)
-#  intermedio_distancia_interpupilar :decimal(10, 2)  default(0.0)
-#  intermedio_color                  :string(255)
-#  intermedio_armazon                :string(255)
-#  intermedio_tipo_lente             :string(255)
-#  bifocal                           :string(255)
-#  altura                            :decimal(10, 2)  default(0.0)
-#  observaciones                     :string(255)
-#  total                             :decimal(10, 2)  default(0.0)
-#  senya                             :decimal(10, 2)  default(0.0)
-#  saldo                             :decimal(10, 2)  default(0.0)
-#  nombre_doctor                     :string(255)
-#  cliente_id                        :integer(4)
-#  created_at                        :datetime
-#  updated_at                        :datetime
-#  fecha_receta                      :date
-#
 

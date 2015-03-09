@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: clientes
+#
+#  id                 :integer          not null, primary key
+#  nombre             :string(255)
+#  domicilio          :string(255)
+#  telefono           :string(255)
+#  localidad          :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
+#  apellidos          :string(255)
+#  correo_electronico :string(255)
+#
+
 # -*- encoding : utf-8 -*-
 class Cliente < ActiveRecord::Base
   attr_accessible :nombre, :apellidos, :domicilio, :telefono, :correo_electronico, :localidad
@@ -29,20 +44,4 @@ class Cliente < ActiveRecord::Base
     )
   end
 end
-
-
-# == Schema Information
-#
-# Table name: clientes
-#
-#  id                 :integer(4)      not null, primary key
-#  nombre             :string(255)
-#  domicilio          :string(255)
-#  telefono           :string(255)
-#  localidad          :string(255)
-#  created_at         :datetime
-#  updated_at         :datetime
-#  apellidos          :string(255)
-#  correo_electronico :string(255)
-#
 

@@ -14,7 +14,7 @@
     <td><%=h orden_trabajo.updated_at.to_date %></td>
     <td><%= link_to 'Ver', [@cliente, orden_trabajo] %></td>
     <td><%= link_to 'Editar', edit_cliente_orden_trabajo_path(@cliente, orden_trabajo) %></td>
-    <td><%= link_to 'Borrar', [@cliente, orden_trabajo], :confirm => "¿Está seguro de borrar la orden #{orden_trabajo.descripcion}?", :method => :delete %></td>
+    <td><%= link_to 'Borrar', [@cliente, orden_trabajo], data: {confirm: "¿Está seguro de borrar la orden #{orden_trabajo.descripcion}?"}, :method => :delete %></td>
   </tr>
 <% end %>
 </table>
