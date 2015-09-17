@@ -1,239 +1,253 @@
 <% @title = "Mostrar órden de trabajo" %>
-<% @navbar = [link_to("Clientes", clientes_path), link_to("Órdenes de trabajo", cliente_ordenes_trabajo_path(@cliente)), @title ] %>
+<% @navbar = [link_to('<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Clientes'.html_safe, clientes_path), link_to('<span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;Órdenes de trabajo'.html_safe, cliente_ordenes_trabajo_path(@cliente)), @title] %>
 
-<a class="print_link" href="javascript:window.print()">Imprimir órden de trabajo</a>
-<table width="100%">
-<tr>
-  <td><b>Fecha de creación:</b></td>
-  <td><b><%= @orden_trabajo.created_at.to_date %></b></td>
-</tr>
-<tr>
-  <td><b>Fecha de actualización:</b></td>
-  <td><%= @orden_trabajo.updated_at.to_date %></td>
-</tr>
-<tr>
-  <td><b>Número de órden:</b></td>
-  <td><%= @orden_trabajo.numero %></td>
-</tr>
-<tr>
-  <td><b>Cliente:</b></td>
-  <td><%= @orden_trabajo.cliente.nombre %></td>
-</tr>
-<tr>
-  <td><b>Descripción:</b></td>
-  <td><%= @orden_trabajo.descripcion %></td>
-</tr>
-<tr>
-  <td><b>Fecha:</b></td>
-  <td><%= @orden_trabajo.fecha %></td>
-</tr>
-<tr>
-  <td><b>Para el día:</b></td>
-  <td><%= @orden_trabajo.fecha_entrega %></td>
-</tr>
-<tr>
-  <td colspan="2"><br /><hr /><br /></td>
-</tr>
-<tr>
-  <td colspan="2"><b>LEJOS</b></td>
-</tr>
-<tr>
-  <td><b>Ojo derecho:</b></td>
-  <td>
-    <table>
-      <tr>
-        <td>Esf.</td>
-        <td><%= '%+.2f' % @orden_trabajo.lejos_od_esferico %></td>
-        <td>Cil.</td>
-        <td><%= '%+.2f' % @orden_trabajo.lejos_od_cilindrico %></td>
-        <td>en</td>
-        <td><%= @orden_trabajo.lejos_od_grados %></td>
-      </tr>
-    </table>
-  </td>
-</tr>
-<tr>
-  <td><b>Ojo izquierdo:</b></td>
-  <td>
-    <table>
-      <tr>
-      <tr>
-        <td>Esf.</td>
-        <td><%= '%+.2f' % @orden_trabajo.lejos_oi_esferico %></td>
-        <td>Cil.</td>
-        <td><%= '%+.2f' % @orden_trabajo.lejos_oi_cilindrico %></td>
-        <td>en</td>
-        <td><%= @orden_trabajo.lejos_oi_grados %></td>
-      </tr>
-      </tr>
-    </table>
-  </td>
-</tr>
-<tr>
-  <td><b>Color:</b></td>
-  <td><%= @orden_trabajo.lejos_color %></td>
-</tr>
-<tr>
-  <td><b>Armazón Art.:</b></td>
-  <td><%= @orden_trabajo.lejos_armazon %></td>
-</tr>
-<tr>
-  <td><b>Tipo de lente:</b></td>
-  <td><%= @orden_trabajo.lejos_tipo_lente %></td>
-</tr>
-<tr>
-  <td><b>Distancia interpupilar:</b></td>
-  <td><%= @orden_trabajo.lejos_distancia_interpupilar %></td>
-</tr>
-<tr>
-  <td colspan="2"><br /><hr /><br /></td>
-</tr>
-<tr>
-  <td colspan="2"><b>INTERMEDIO</b></td>
-</tr>
-<tr>
-  <td><b>Ojo derecho:</b></td>
-  <td>
-    <table>
-      <tr>
-        <td>Esf.</td>
-        <td><%= '%+.2f' % @orden_trabajo.intermedio_od_esferico %></td>
-        <td>Cil.</td>
-        <td><%= '%+.2f' % @orden_trabajo.intermedio_od_cilindrico %></td>
-        <td>en</td>
-        <td><%= @orden_trabajo.intermedio_od_grados %></td>
-      </tr>
-    </table>
-  </td>
-</tr>
-<tr>
-  <td><b>Ojo izquierdo:</b></td>
-  <td>
-    <table>
-      <tr>
-      <tr>
-        <td>Esf.</td>
-        <td><%= '%+.2f' % @orden_trabajo.intermedio_oi_esferico %></td>
-        <td>Cil.</td>
-        <td><%= '%+.2f' % @orden_trabajo.intermedio_oi_cilindrico %></td>
-        <td>en</td>
-        <td><%= @orden_trabajo.intermedio_oi_grados %></td>
-      </tr>
-      </tr>
-    </table>
-  </td>
-</tr>
-<tr>
-  <td><b>Color:</b></td>
-  <td><%= @orden_trabajo.intermedio_color %></td>
-</tr>
-<tr>
-  <td><b>Armazón Art.:</b></td>
-  <td><%= @orden_trabajo.intermedio_armazon %></td>
-</tr>
-<tr>
-  <td><b>Tipo de lente:</b></td>
-  <td><%= @orden_trabajo.intermedio_tipo_lente %></td>
-</tr>
-<tr>
-  <td><b>Distancia interpupilar:</b></td>
-  <td><%= @orden_trabajo.intermedio_distancia_interpupilar %></td>
-</tr>
-<tr>
-  <td colspan="2"><br /><hr /><br /></td>
-</tr>
-<tr>
-  <td colspan="2"><b>CERCA</b></td>
-</tr>
-<tr>
-  <td><b>Ojo derecho:</b></td>
-  <td>
-    <table>
-      <tr>
-        <td>Esf.</td>
-        <td><%= '%+.2f' % @orden_trabajo.cerca_od_esferico %></td>
-        <td>Cil.</td>
-        <td><%= '%+.2f' % @orden_trabajo.cerca_od_cilindrico %></td>
-        <td>en</td>
-        <td><%= @orden_trabajo.cerca_od_grados %></td>
-      </tr>
-    </table>
-  </td>
-</tr>
-<tr>
-  <td><b>Ojo izquierdo:</b></td>
-  <td>
-    <table>
-      <tr>
-      <tr>
-        <td>Esf.</td>
-        <td><%= '%+.2f' % @orden_trabajo.cerca_oi_esferico %></td>
-        <td>Cil.</td>
-        <td><%= '%+.2f' % @orden_trabajo.cerca_oi_cilindrico %></td>
-        <td>en</td>
-        <td><%= @orden_trabajo.cerca_oi_grados %></td>
-      </tr>
-      </tr>
-    </table>
-  </td>
-</tr>
-<tr>
-  <td><b>Color:</b></td>
-  <td><%= @orden_trabajo.cerca_color %></td>
-</tr>
-<tr>
-  <td><b>Armazón Art.:</b></td>
-  <td><%= @orden_trabajo.cerca_armazon %></td>
-</tr>
-<tr>
-  <td><b>Tipo de lente:</b></td>
-  <td><%= @orden_trabajo.cerca_tipo_lente %></td>
-</tr>
-<tr>
-  <td><b>Distancia interpupilar:</b></td>
-  <td><%= @orden_trabajo.cerca_distancia_interpupilar %></td>
-</tr>
-<tr>
-  <td colspan="2"><br /><hr /><br /></td>
-</tr>
-<tr>
-  <td><b>Bifocal:</b></td>
-  <td><%= @orden_trabajo.bifocal %></td>
-</tr>
-<tr>
-  <td><b>Altura:</b></td>
-  <td><%= @orden_trabajo.altura %></td>
-</tr>
-<tr>
-  <td colspan="2"><br /><hr /><br /></td>
-</tr>
-<tr>
-  <td valign="top"><b>Observaciones:</b></td>
-  <td><%= @orden_trabajo.observaciones %></td>
-</tr>
-<tr>
-  <td><b>Receta Dr:</b></td>
-  <td><%= @orden_trabajo.nombre_doctor %></td>
-</tr>
-<tr>
-  <td><b>Fecha de la receta:</b></td>
-  <td><%= @orden_trabajo.fecha_receta %></td>
-</tr>
-<tr>
-  <td><b>Total:</b></td>
-  <td><%= number_to_currency @orden_trabajo.total %></td>
-</tr>
-<tr>
-  <td><b>Seña:</b></td>
-  <td><%= number_to_currency @orden_trabajo.senya %></td>
-</tr>
-<tr>
-  <td><b>Saldo:</b></td>
-  <td><%= number_to_currency @orden_trabajo.saldo %></td>
-</tr>
-</table>
-
-<div class="print_link">
-<%= link_to 'Editar', edit_cliente_orden_trabajo_path(@cliente, @orden_trabajo) %> |
-<%= link_to 'Atrás', cliente_ordenes_trabajo_path %>
+<div class="table-responsive tblclient">
+  <div>
+    <%= link_to '<span class="print_link glyphicon glyphicon-print"></span>&nbsp;&nbsp;Imprimir órden de trabajo'.html_safe, 'javascript:window.print()' %>
+  </div>
+  <br />
+  <table class="table table-striped">
+    <tr>
+      <td><b>Fecha de creación:</b></td>
+      <td><b><%= @orden_trabajo.created_at.to_date %></b></td>
+    </tr>
+    <tr>
+      <td><b>Fecha de actualización:</b></td>
+      <td><%= @orden_trabajo.updated_at.to_date %></td>
+    </tr>
+    <tr>
+      <td><b>Número de órden:</b></td>
+      <td><%= @orden_trabajo.numero %></td>
+    </tr>
+    <tr>
+      <td><b>Cliente:</b></td>
+      <td><%= @orden_trabajo.cliente.nombre %></td>
+    </tr>
+    <tr>
+      <td><b>Descripción:</b></td>
+      <td><%= @orden_trabajo.descripcion %></td>
+    </tr>
+    <tr>
+      <td><b>Fecha:</b></td>
+      <td><%= @orden_trabajo.fecha %></td>
+    </tr>
+    <tr>
+      <td><b>Para el día:</b></td>
+      <td><%= @orden_trabajo.fecha_entrega %></td>
+    </tr>
+    <tr>
+      <td colspan="2"><br/>
+        <hr/>
+        <br/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><b>LEJOS</b></td>
+    </tr>
+    <tr>
+      <td><b>Ojo derecho:</b></td>
+      <td>
+        <table>
+          <tr>
+            <td>Esf.</td>
+            <td><%= '%+.2f' % @orden_trabajo.lejos_od_esferico %></td>
+            <td>Cil.</td>
+            <td><%= '%+.2f' % @orden_trabajo.lejos_od_cilindrico %></td>
+            <td>en</td>
+            <td><%= @orden_trabajo.lejos_od_grados %></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Ojo izquierdo:</b></td>
+      <td>
+        <table>
+          <tr>
+          <tr>
+            <td>Esf.</td>
+            <td><%= '%+.2f' % @orden_trabajo.lejos_oi_esferico %></td>
+            <td>Cil.</td>
+            <td><%= '%+.2f' % @orden_trabajo.lejos_oi_cilindrico %></td>
+            <td>en</td>
+            <td><%= @orden_trabajo.lejos_oi_grados %></td>
+          </tr>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Color:</b></td>
+      <td><%= @orden_trabajo.lejos_color %></td>
+    </tr>
+    <tr>
+      <td><b>Armazón Art.:</b></td>
+      <td><%= @orden_trabajo.lejos_armazon %></td>
+    </tr>
+    <tr>
+      <td><b>Tipo de lente:</b></td>
+      <td><%= @orden_trabajo.lejos_tipo_lente %></td>
+    </tr>
+    <tr>
+      <td><b>Distancia interpupilar:</b></td>
+      <td><%= @orden_trabajo.lejos_distancia_interpupilar %></td>
+    </tr>
+    <tr>
+      <td colspan="2"><br/>
+        <hr/>
+        <br/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><b>INTERMEDIO</b></td>
+    </tr>
+    <tr>
+      <td><b>Ojo derecho:</b></td>
+      <td>
+        <table>
+          <tr>
+            <td>Esf.</td>
+            <td><%= '%+.2f' % @orden_trabajo.intermedio_od_esferico %></td>
+            <td>Cil.</td>
+            <td><%= '%+.2f' % @orden_trabajo.intermedio_od_cilindrico %></td>
+            <td>en</td>
+            <td><%= @orden_trabajo.intermedio_od_grados %></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Ojo izquierdo:</b></td>
+      <td>
+        <table>
+          <tr>
+          <tr>
+            <td>Esf.</td>
+            <td><%= '%+.2f' % @orden_trabajo.intermedio_oi_esferico %></td>
+            <td>Cil.</td>
+            <td><%= '%+.2f' % @orden_trabajo.intermedio_oi_cilindrico %></td>
+            <td>en</td>
+            <td><%= @orden_trabajo.intermedio_oi_grados %></td>
+          </tr>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Color:</b></td>
+      <td><%= @orden_trabajo.intermedio_color %></td>
+    </tr>
+    <tr>
+      <td><b>Armazón Art.:</b></td>
+      <td><%= @orden_trabajo.intermedio_armazon %></td>
+    </tr>
+    <tr>
+      <td><b>Tipo de lente:</b></td>
+      <td><%= @orden_trabajo.intermedio_tipo_lente %></td>
+    </tr>
+    <tr>
+      <td><b>Distancia interpupilar:</b></td>
+      <td><%= @orden_trabajo.intermedio_distancia_interpupilar %></td>
+    </tr>
+    <tr>
+      <td colspan="2"><br/>
+        <hr/>
+        <br/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><b>CERCA</b></td>
+    </tr>
+    <tr>
+      <td><b>Ojo derecho:</b></td>
+      <td>
+        <table>
+          <tr>
+            <td>Esf.</td>
+            <td><%= '%+.2f' % @orden_trabajo.cerca_od_esferico %></td>
+            <td>Cil.</td>
+            <td><%= '%+.2f' % @orden_trabajo.cerca_od_cilindrico %></td>
+            <td>en</td>
+            <td><%= @orden_trabajo.cerca_od_grados %></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Ojo izquierdo:</b></td>
+      <td>
+        <table>
+          <tr>
+          <tr>
+            <td>Esf.</td>
+            <td><%= '%+.2f' % @orden_trabajo.cerca_oi_esferico %></td>
+            <td>Cil.</td>
+            <td><%= '%+.2f' % @orden_trabajo.cerca_oi_cilindrico %></td>
+            <td>en</td>
+            <td><%= @orden_trabajo.cerca_oi_grados %></td>
+          </tr>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Color:</b></td>
+      <td><%= @orden_trabajo.cerca_color %></td>
+    </tr>
+    <tr>
+      <td><b>Armazón Art.:</b></td>
+      <td><%= @orden_trabajo.cerca_armazon %></td>
+    </tr>
+    <tr>
+      <td><b>Tipo de lente:</b></td>
+      <td><%= @orden_trabajo.cerca_tipo_lente %></td>
+    </tr>
+    <tr>
+      <td><b>Distancia interpupilar:</b></td>
+      <td><%= @orden_trabajo.cerca_distancia_interpupilar %></td>
+    </tr>
+    <tr>
+      <td colspan="2"><br/>
+        <hr/>
+        <br/></td>
+    </tr>
+    <tr>
+      <td><b>Bifocal:</b></td>
+      <td><%= @orden_trabajo.bifocal %></td>
+    </tr>
+    <tr>
+      <td><b>Altura:</b></td>
+      <td><%= @orden_trabajo.altura %></td>
+    </tr>
+    <tr>
+      <td colspan="2"><br/>
+        <hr/>
+        <br/></td>
+    </tr>
+    <tr>
+      <td valign="top"><b>Observaciones:</b></td>
+      <td><%= @orden_trabajo.observaciones %></td>
+    </tr>
+    <tr>
+      <td><b>Receta Dr:</b></td>
+      <td><%= @orden_trabajo.nombre_doctor %></td>
+    </tr>
+    <tr>
+      <td><b>Fecha de la receta:</b></td>
+      <td><%= @orden_trabajo.fecha_receta %></td>
+    </tr>
+    <tr>
+      <td><b>Total:</b></td>
+      <td><%= number_to_currency @orden_trabajo.total %></td>
+    </tr>
+    <tr>
+      <td><b>Seña:</b></td>
+      <td><%= number_to_currency @orden_trabajo.senya %></td>
+    </tr>
+    <tr>
+      <td><b>Saldo:</b></td>
+      <td><%= number_to_currency @orden_trabajo.saldo %></td>
+    </tr>
+  </table>
+  <div class="print_link">
+    <%= link_to '<span class="glyphicon glyphicon-circle-arrow-left"></span>&nbsp;&nbsp;Volver atrás'.html_safe, cliente_ordenes_trabajo_path %>
+    <%= link_to 'Editar órden de trabajo', edit_cliente_orden_trabajo_path(@cliente, @orden_trabajo), :class => 'btn btn-warning pull-right' %>
+  </div>
 </div>

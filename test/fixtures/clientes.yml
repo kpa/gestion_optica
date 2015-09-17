@@ -11,6 +11,7 @@
 #  updated_at         :datetime
 #  apellidos          :string(255)
 #  correo_electronico :string(255)
+#  observaciones      :string(255)
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

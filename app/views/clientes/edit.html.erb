@@ -1,12 +1,13 @@
 <% @title = "Editar cliente" %>
-<% @navbar = [link_to("Clientes", clientes_path), @title ] %>
+<% @navbar = [link_to('<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Clientes'.html_safe, clientes_path), @title] %>
 
 <%= error_messages_for :cliente %>
 
-<%= form_for(@cliente) do |form| %>
-  <%= render :partial => 'form', :object => form %>
-  <%= form.submit "Editar" %>
-<% end %>
+<div class="table-responsive tblclient">
+  <%= form_for(@cliente) do |form| %>
+      <%= render :partial => 'form', :object => form %>
+      <%= form.submit 'Guardar edición cliente', :class => 'btn btn-warning pull-right' %>
+      <%= link_to '<span class="glyphicon glyphicon-circle-arrow-left"></span>&nbsp;&nbsp;Volver atrás'.html_safe, clientes_path %>
+  <% end %>
+</div>
 
-<%= link_to 'Ver', @cliente %> |
-<%= link_to 'Atrás', clientes_path %>

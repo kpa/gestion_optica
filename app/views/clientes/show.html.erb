@@ -1,36 +1,37 @@
 <% @title = "Mostrar cliente" %>
-<% @navbar = [link_to("Clientes", clientes_path), @title ] %>
+<% @navbar = [link_to('<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Clientes'.html_safe, clientes_path), @title] %>
 
-<a class="print_link" href="javascript:window.print()">Imprimir cliente</a>
+<div class="table-responsive tblclient">
+  <div>
+    <%= link_to '<span class="print_link glyphicon glyphicon-print"></span>&nbsp;&nbsp;Imprimir cliente'.html_safe, 'javascript:window.print()', class: 'print' %>
+  </div>
+  <br />
+  <h3 class="page-title">Datos del cliente</h3>
+  <table class="table table-striped">
+    <tr>
+      <td><b>Nombre:</b></td>
+      <td><%= @cliente.nombre_completo %></td>
+    </tr>
+    <tr>
+      <td><b>Domicilio:</b></td>
+      <td><%= @cliente.domicilio %></td>
+    </tr>
+    <tr>
+      <td><b>Teléfono:</b></td>
+      <td><%= @cliente.telefono %></td>
+    </tr>
+    <tr>
+      <td><b>Correo electrónico:</b></td>
+      <td><%= @cliente.correo_electronico %></td>
+    </tr>
+    <tr>
+      <td><b>Localidad:</b></td>
+      <td><%= h @cliente.localidad %></td>
+    </tr>
+  </table>
 
-<table>
-<tr>
-  <td><b>Nombre:</b></td>
-  <td><%= h @cliente.nombre %></td>
-</tr>
-<tr>
-  <td><b>Apellidos:</b></td>
-  <td><%= h @cliente.apellidos %></td>
-</tr>
-<tr>
-  <td><b>Domicilio:</b></td>
-  <td><%= h @cliente.domicilio %></td>
-</tr>
-<tr>
-  <td><b>Teléfono:</b></td>
-  <td><%= h @cliente.telefono %></td>
-</tr>
-<tr>
-  <td><b>Correo electrónico:</b></td>
-  <td><%= h @cliente.correo_electronico %></td>
-</tr>
-<tr>
-  <td><b>Localidad:</b></td>
-  <td><%= h @cliente.localidad %></td>
-</tr>
-</table>
-
-<div class="print_link">
-  <%= link_to 'Editar', edit_cliente_path(@cliente) %> |
-  <%= link_to 'Atrás', clientes_path %>
+  <div class="print_link">
+    <%= link_to '<span class="glyphicon glyphicon-circle-arrow-left"></span>&nbsp;&nbsp;Volver atrás'.html_safe, clientes_path %>
+    <%= link_to 'Editar cliente', edit_cliente_path(@cliente), :class => 'btn btn-warning pull-right' %>
+  </div>
 </div>

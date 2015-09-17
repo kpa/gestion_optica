@@ -1,12 +1,13 @@
 # -*- encoding : utf-8 -*-
 module ApplicationHelper
   def site_name
-    "Óptica"
+    "Gestión de óptica"
   end
 
   def link_cierre_sesion
     link_to 'Cerrar sesión', :controller => :user, :action=> :logout
   end
+
   # Muestra una caja con mensajes para el usuario.
   def show_flash
     flash_names = [:notice, :warning, :message]
@@ -25,8 +26,18 @@ module ApplicationHelper
     end
     return raw(output)
   end
+
   def current_user
-    #User.find(:first, :conditions => ['id = ?', session[:user_id]])
+    return unless session[:user_id]
+    @current_user ||= User.find(session[:user_id])
+  end
+
+  def nav_link(link_text, link_path)
+    class_name = current_page?(link_path) ? 'active' : ''
+
+    content_tag(:li, :class => class_name) do
+      link_to link_text, link_path
+    end
   end
 
   # Creates a label tag.

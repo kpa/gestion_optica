@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"/>
+  <%= favicon_link_tag "favicon.png?v=#{Time.now.to_i}", type: 'image/png' %>
   <%= stylesheet_link_tag 'application', :media => :screen %>
   <%= stylesheet_link_tag 'application-print', :media => :print %>
   <%= javascript_include_tag 'application' %>
-  <%#= calendar_date_select_includes :locale => :es %>
   <!--[if gte IE 5]>
     <%= stylesheet_link_tag "application-ie", :media => :screen %>
     <![endif]-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <title>
     <%=
         if @title then
@@ -20,62 +20,66 @@
         end
     %>
   </title>
-  <%= csrf_meta_tags %>
 </head>
 <body>
 <div class="container">
+  <header>
+    <div class="title"><h1><%= site_name %></h1></div>
+    <div class="logo"></div>
+  </header>
   <div class="main">
-    <div class="header">
-      <div class="title"><h1><%= site_name %></h1></div>
-    </div>
-    <div class="navigation">
-      <div style="float: left;">
-        <ul class="navlist">
-          <% if current_user -%>
-            <li><%= link_to "Home", {:controller => :user} %></li>
-          <% else -%>
-            <li><%= link_to "Home", {:controller => :main} %></li>
-          <% end -%>
-          <% if @navbar then %>
-            <% for item in @navbar -%>
-              <li><%= item %></li>
-            <% end -%>
-          <%end%>
-        </ul>
-      </div>
-      <div align="right">
+    <nav class="navlist">
+      <ul class="nav nav-tabs">
         <% if current_user -%>
-          <%= link_cierre_sesion %>
+            <li class="active" role="navigation">
+              <%= link_to '<span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home'.html_safe,
+                          {:controller => :user} %>
+            </li>
         <% else -%>
-          &nbsp;
+            <li class="active" role="navigation">
+              <%= link_to '<span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home'.html_safe,
+                          {:controller => :main} %>
+            </li>
         <% end -%>
-      </div>
-    </div>
-    <div class="sidenav">
-      <h1>Clientes</h1>
-      <ul>
-        <li><%= link_to "Nuevo cliente",  new_cliente_path %></li>
-        <li><%= link_to "Ver clientes",  clientes_path %></li>
-        <li><%= link_to "Importar órdenes",  :controller => :main, :action => :import_ordenes_trabajo_file %></li>
+        <% if @navbar then %>
+            <% for item in @navbar -%>
+                <li class="navitems" role="navigation"><%= item %></li>
+            <% end -%>
+        <% end %>
+        <li class="navbar-right">
+          <% if current_user %>
+              Autenticado como <%= current_user %> - <%= link_cierre_sesion %>
+          <% else %>
+              &nbsp;
+          <% end %>
+        </li>
       </ul>
-    </div>
-    <div class="content">
-      <div class="title">
-        <div style="float: left">
-          <%= @title if @title %>
-        </div>
-        <div align="right" style="height: 16px">&nbsp;
-          <%= image_tag("loading.gif", :id => "loader") %>
-        </div>
-      </div>
+    </nav>
+
+    <nav class="navbar navbar-default navbar-left menu-left">
+      <h3>Clientes</h3>
+      <ul class="nav nav-pills nav-stacked">
+        <%= nav_link "Nuevo cliente", new_cliente_path %>
+        <%= nav_link "Ver clientes", clientes_path %>
+        <%= nav_link "Importar órdenes", import_file_ordenes_trabajo_path %>
+      </ul>
+    </nav>
+
+    <aside>
       <%= show_flash %>
-      <div class="item">
+      <div>
         <%= yield %>
       </div>
-    </div>
+    </aside>
   </div>
-  <div class="footer">
-    <span class="left">&copy; 2007 Roberto Romero. Valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &amp; <a href="http://validator.w3.org/check?uri=referer">XHTML</a></span>
+
+  <div class="clearfix"></div>
+  <br /><br />
+  <div class="panel-footer footer text-center">
+    <footer>
+      <span class="left copyleft"><strong>2007&nbsp;-&nbsp;<%= Date.today.year %>.</strong>
+        <muted>Roberto Romero & Karina Arena.</muted></span>
+    </footer>
   </div>
 </div>
 </body>

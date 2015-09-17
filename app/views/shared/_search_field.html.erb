@@ -1,29 +1,23 @@
-<script type="text/javascript">
-  // Append the function to the "document ready" chain
-  jQuery(function($) {
-// when the #search field changes
-    $("#search").bind( 'keyup', function() {
-      clearTimeout(window.searchTimeout)
-      window.searchTimeout = setTimeout(function() {
-        $('#loader').show();
-        // make a POST call and replace the content
-        $.get('<%= url_for({:action => 'find_items', :only_path => true}) %>', {search: $("#search").val()}, function(data) {
-          $("#search_results").html(data);
-          $('#loader').hide();
+<div class="tblclient">
+    <script type="text/javascript">
+      // Append the function to the "document ready" chain
+      jQuery(function($) {
+    // when the #search field changes
+        $("#search").bind( 'keyup', function() {
+          clearTimeout(window.searchTimeout)
+          window.searchTimeout = setTimeout(function() {
+            $('#loader').show();
+            // make a POST call and replace the content
+            $.get('<%= url_for({:action => 'find_items', :only_path => true}) %>', {search: $("#search").val()}, function(data) {
+              $("#search_results").html(data);
+              $('#loader').hide();
+            });
+          }, 500);
         });
-      }, 500);
-    });
-  })
-</script>
-Buscar: <%= text_field_tag 'search', params[:search], :size => 20 %>
-<%= image_tag("loading.gif", :id => "loader", :style => "display: none") %>
+      })
+    </script>
+    Búsqueda: <%= text_field_tag 'search', params[:search], :size => 20 %>
+    <%= image_tag("loading.gif", :id => "loader", :style => "display: none") %>
+</div>
 <br /><br />
-<%#= observe_field :search,
-                  :frequency => 1,
-                  :update => 'search_results',
-                  :url => {:action => 'find_items', :only_path => true},
-                  :method => "get",
-                  :with => "'search=' + encodeURIComponent(value)",
-                  :before => "Element.show('loader')",
-                  :complete => "Element.hide('loader')"
-%>
+

@@ -11,6 +11,7 @@
 #  updated_at         :datetime
 #  apellidos          :string(255)
 #  correo_electronico :string(255)
+#  observaciones      :string(255)
 #
 
 # -*- encoding : utf-8 -*-
@@ -21,7 +22,6 @@ class Cliente < ActiveRecord::Base
   validates_presence_of :nombre, :apellidos
   validates_uniqueness_of :nombre, :scope => :apellidos
   validates_uniqueness_of :correo_electronico, :allow_blank => true
-#  validates_format_of :correo_electronico, :with => ValidateEmail::EmailRegexp
   validates_format_of :correo_electronico, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :allow_blank => true
 
   has_many :ordenes_trabajo
@@ -43,5 +43,10 @@ class Cliente < ActiveRecord::Base
         "%#{search}%", "%#{search}%"]
     )
   end
+
+  def nombre_completo
+    "#{nombre} #{apellidos}"
+  end
+
 end
 

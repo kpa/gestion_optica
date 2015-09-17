@@ -1,5 +1,5 @@
 <% @title = "Importar fichero CSV con órdenes de trabajo" %>
-<% @navbar = [link_to("Clientes", clientes_path), link_to("Órdenes de trabajo", cliente_ordenes_trabajo_path(@cliente)), @title ] %>
+<% @navbar = [link_to('<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Clientes'.html_safe, clientes_path), link_to('<span class="glyphicon glyphicon-file"></span>&nbsp;&nbsp;Órdenes de trabajo'.html_safe, cliente_ordenes_trabajo_path(@cliente)), @title ] %>
 
 <%= error_messages_for :orden_trabajo %>
 

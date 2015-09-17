@@ -3,6 +3,7 @@ GestionOpticaArena::Application.routes.draw do
   resources :ordenes_trabajo do
     collection do
       get :find_items
+      get :import_file
     end
   end
 
