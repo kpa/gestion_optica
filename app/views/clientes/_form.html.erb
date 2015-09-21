@@ -12,7 +12,11 @@
     <td><%= form.text_field :domicilio, class: 'form-control' %></td>
   </tr>
   <tr>
-    <td><%= label_tag :cliente_telefono, "Teléfono:" %></td>
+    <td><%= label_tag :cliente_localidad, "Localidad:" %></td>
+    <td><%= form.text_field :localidad, class: 'form-control' %></td>
+  </tr>
+  <tr>
+    <td><%= label_tag :cliente_telefono, "Teléfonos:" %></td>
     <td><%= form.text_field :telefono, class: 'form-control' %></td>
   </tr>
   <tr>
@@ -20,7 +24,7 @@
     <td><%= form.text_field :correo_electronico, class: 'form-control' %></td>
   </tr>
   <tr>
-    <td><%= label_tag :cliente_localidad, "Localidad:" %></td>
-    <td><%= form.text_field :localidad, class: 'form-control' %></td>
+    <td><%= label_tag :cliente_observaciones, "Observaciones:" %></td>
+    <td><%= form.text_field :observaciones, class: 'form-control' %></td>
   </tr>
 </table>

@@ -16,7 +16,7 @@
 
 # -*- encoding : utf-8 -*-
 class Cliente < ActiveRecord::Base
-  attr_accessible :nombre, :apellidos, :domicilio, :telefono, :correo_electronico, :localidad
+  attr_accessible :nombre, :apellidos, :domicilio, :telefono, :correo_electronico, :localidad, :observaciones
   cattr_reader :per_page
   @@per_page = 10
   validates_presence_of :nombre, :apellidos

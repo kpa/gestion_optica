@@ -9,7 +9,8 @@ body {
     margin: 0;
 }
 
-.header, .footer, .navigation, .sidenav, .title, .print_link, nav.navlist, nav.navbar, a.print, div.panel-footer {
+.header, .footer, .navigation, .sidenav, .title, .print_link, nav.navlist, nav.navbar, a.print, div.panel-footer,
+div.noticeExplanation {
     display: none;
 }
 

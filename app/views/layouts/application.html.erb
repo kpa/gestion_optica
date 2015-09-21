@@ -77,8 +77,16 @@
   <br /><br />
   <div class="panel-footer footer text-center">
     <footer>
-      <span class="left copyleft"><strong>2007&nbsp;-&nbsp;<%= Date.today.year %>.</strong>
-        <muted>Roberto Romero & Karina Arena.</muted></span>
+      <span class="left copyleft">
+        <strong>2007&nbsp;-&nbsp;<%= Date.today.year %>.</strong>
+        Roberto Romero &
+        <script type="text/javascript">
+            emailE=('dev@' + 'karinaarena.com.ar')
+            document.write(
+                    '<a id="mail" href="mailto:' + emailE + '">Karina Arena</a>'
+            )
+        </script>.
+      </span>
     </footer>
   </div>
 </div>
