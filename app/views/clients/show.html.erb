@@ -1,0 +1,41 @@
+<% @title = "Mostrar client" %>
+<% @navbar = [link_to('<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Clients'.html_safe, clients_path), @title] %>
+
+<div class="table-responsive tblclient">
+  <div>
+    <%= link_to '<span class="print_link glyphicon glyphicon-print"></span>&nbsp;&nbsp;Imprimir client'.html_safe, 'javascript:window.print()', class: 'print' %>
+  </div>
+  <br />
+  <h3 class="page-title">Datos del client</h3>
+  <table class="table table-striped">
+    <tr>
+      <td><b>Nombre:</b></td>
+      <td><%= @client.nombre_completo %></td>
+    </tr>
+    <tr>
+      <td><b>Domicilio:</b></td>
+      <td><%= @client.domicilio %></td>
+    </tr>
+    <tr>
+      <td><b>Localidad:</b></td>
+      <td><%= @client.localidad %></td>
+    </tr>
+    <tr>
+      <td><b>Teléfono:</b></td>
+      <td><%= @client.telefono %></td>
+    </tr>
+    <tr>
+      <td><b>Correo electrónico:</b></td>
+      <td><%= @client.correo_electronico %></td>
+    </tr>
+    <tr>
+      <td><b>Observaciones:</b></td>
+      <td><%= @client.observaciones %></td>
+    </tr>
+  </table>
+
+  <div class="print_link">
+    <%= link_to '<span class="glyphicon glyphicon-circle-arrow-left"></span>&nbsp;&nbsp;Volver atrás'.html_safe, clients_path %>
+    <%= link_to 'Editar client', edit_client_path(@client), :class => 'btn btn-warning pull-right' %>
+  </div>
+</div>

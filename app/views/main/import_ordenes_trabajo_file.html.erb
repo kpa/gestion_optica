@@ -1,12 +1,12 @@
 <% @title = "Importar fichero CSV con órdenes de trabajo" %>
-<% @navbar = [link_to('<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Clientes'.html_safe, clientes_path), link_to('<span class="glyphicon glyphicon-file"></span>&nbsp;&nbsp;Órdenes de trabajo'.html_safe, cliente_ordenes_trabajo_path(@cliente)), @title ] %>
+<% @navbar = [link_to('<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Clients'.html_safe, clients_path), link_to('<span class="glyphicon glyphicon-file"></span>&nbsp;&nbsp;Órdenes de trabajo'.html_safe, client_work_orders_path(@client)), @title ] %>
 
-<%= error_messages_for :orden_trabajo %>
+<%= error_messages_for :work_order %>
 
 <div class="fieldsExplanation">
   <h2>COLUMNAS QUE DEBERÁ CONTENER EL FICHERO CSV Y ÓRDEN DE DICHAS COLUMNAS</h2>
   <ul>
-    <li>Nombre del cliente</li>
+    <li>Nombre del client</li>
     <li>Descripción de la órden</li>
     <li>Fecha</li>
     <li>Para el día</li>
@@ -54,7 +54,7 @@
     <li>Fecha de la receta</li>
   </ul>
 </div>
-<%= form_tag({:action => :load_ordenes_trabajo_file}, :multipart => true) do %>
+<%= form_tag({:action => :load_work_orders_file}, :multipart => true) do %>
 <table>
 <tr>
   <td><b><%= label_tag :import_file, "Fichero CSV:" %></b></td>

@@ -1,0 +1,33 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Domicilio</th>
+        <th>Localidad</th>
+        <th>Télefonos</th>
+        <th>Correo electrónico</th>
+        <th>Observaciones</th>
+        <th colspan="3">Acciones</th>
+        <th>Trabajos</th>
+      </tr>
+
+    <% for client in @clients %>
+      <tr>
+        <td><%=h client.nombre %></td>
+        <td><%=h client.apellidos %></td>
+        <td><%=h client.domicilio %></td>
+        <td><%=h client.localidad %></td>
+        <td><%=h client.telefono %></td>
+        <td><%=h client.correo_electronico %></td>
+        <td><%=h client.observaciones %></td>
+        <td><%= link_to 'Ver', client %></td>
+        <td><%= link_to 'Editar', edit_client_path(client) %></td>
+        <td><%= link_to 'Borrar', client, data: {confirm: "¿Está seguro de borrar al client #{client.nombre}?"}, :method => :delete %></td>
+        <td class="jobs"><%= link_to 'Órdenes de trabajo', client_work_orders_path(client) %></td>
+      </tr>
+    <% end %>
+    </table>
+</div>
+<% params[:action] = "index" %>
+<%= will_paginate @clients, :prev_label => "&laquo; Anterior", :next_label => "Siguiente &raquo;" %>

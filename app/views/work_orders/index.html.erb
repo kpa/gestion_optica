@@ -1,0 +1,9 @@
+<% @title = "Órdenes de trabajo" %>
+<% @navbar = [link_to('<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Clients'.html_safe, clients_path), '<span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;Órdenes de trabajo'.html_safe ] %>
+
+<%= link_to 'Nueva órden de trabajo', new_client_work_order_path(@client), :class => 'btn btn-warning pull-right' %>
+<%= render :partial => "shared/search_field" %>
+<div id="search_results">
+  <%= render :partial => "search" %>
+</div>
+

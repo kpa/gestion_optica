@@ -1,15 +1,15 @@
 <table class="table table-striped">
 <tr>
-  <td><b>Cliente:</b></td>
-  <td><%= link_to(@cliente.nombre, @cliente) %></td>
+  <td><b>Client:</b></td>
+  <td><%= link_to(@client.nombre, @client) %></td>
 </tr>
 <tr>
   <td><b>Domicilio:</b></td>
-  <td><%= @cliente.domicilio %></td>
+  <td><%= @client.domicilio %></td>
 </tr>
 <tr>
   <td><b>Teléfono:</b></td>
-  <td><%= @cliente.telefono %></td>
+  <td><%= @client.telefono %></td>
 </tr>
 <tr>
   <td colspan="2"><br /><hr /><br /></td>
@@ -39,10 +39,10 @@
       <tr>
         <td>Esf.</td>
         <td><%= form.text_field :lejos_od_esferico, class: 'form-control',
-                                :value => '%+.2f' % @orden_trabajo.lejos_od_esferico, :size => 5 %></td>
+                                :value => '%+.2f' % @work_order.lejos_od_esferico, :size => 5 %></td>
         <td>Cil.</td>
         <td><%= form.text_field :lejos_od_cilindrico, class: 'form-control',
-                                :value => '%+.2f' % @orden_trabajo.lejos_od_cilindrico, :size => 5 %></td>
+                                :value => '%+.2f' % @work_order.lejos_od_cilindrico, :size => 5 %></td>
         <td>en</td>
         <td><%= form.text_field :lejos_od_grados, class: 'form-control', :size => 5 %></td>
       </tr>
@@ -57,10 +57,10 @@
       <tr>
         <td>Esf.</td>
         <td><%= form.text_field :lejos_oi_esferico, class: 'form-control',
-                                :value => '%+.2f' % @orden_trabajo.lejos_oi_esferico, :size => 5 %></td>
+                                :value => '%+.2f' % @work_order.lejos_oi_esferico, :size => 5 %></td>
         <td>Cil.</td>
         <td><%= form.text_field :lejos_oi_cilindrico, class: 'form-control',
-                                :value => '%+.2f' % @orden_trabajo.lejos_oi_cilindrico, :size => 5 %></td>
+                                :value => '%+.2f' % @work_order.lejos_oi_cilindrico, :size => 5 %></td>
         <td>en</td>
         <td><%= form.text_field :lejos_oi_grados, class: 'form-control', :size => 5 %></td>
       </tr>
@@ -97,10 +97,10 @@
       <tr>
         <td>Esf.</td>
         <td><%= form.text_field :intermedio_od_esferico, class: 'form-control',
-                                :value => '%+.2f' % @orden_trabajo.intermedio_od_esferico, :size => 5 %></td>
+                                :value => '%+.2f' % @work_order.intermedio_od_esferico, :size => 5 %></td>
         <td>Cil.</td>
         <td><%= form.text_field :intermedio_od_cilindrico, class: 'form-control',
-                                :value => '%+.2f' % @orden_trabajo.intermedio_od_cilindrico, :size => 5 %></td>
+                                :value => '%+.2f' % @work_order.intermedio_od_cilindrico, :size => 5 %></td>
         <td>en</td>
         <td><%= form.text_field :intermedio_od_grados, class: 'form-control', :size => 5 %></td>
       </tr>
@@ -115,10 +115,10 @@
       <tr>
         <td>Esf.</td>
         <td><%= form.text_field :intermedio_oi_esferico, class: 'form-control',
-                                :value => '%+.2f' % @orden_trabajo.intermedio_oi_esferico, :size => 5 %></td>
+                                :value => '%+.2f' % @work_order.intermedio_oi_esferico, :size => 5 %></td>
         <td>Cil.</td>
         <td><%= form.text_field :intermedio_oi_cilindrico, class: 'form-control',
-                                :value => '%+.2f' % @orden_trabajo.intermedio_oi_cilindrico, :size => 5 %></td>
+                                :value => '%+.2f' % @work_order.intermedio_oi_cilindrico, :size => 5 %></td>
         <td>en</td>
         <td><%= form.text_field :intermedio_oi_grados, class: 'form-control', :size => 5 %></td>
       </tr>
@@ -155,10 +155,10 @@
       <tr>
         <td>Esf.</td>
         <td><%= form.text_field :cerca_od_esferico, class: 'form-control',
-                                :value => '%+.2f' % @orden_trabajo.cerca_od_esferico, :size => 5 %></td>
+                                :value => '%+.2f' % @work_order.cerca_od_esferico, :size => 5 %></td>
         <td>Cil.</td>
         <td><%= form.text_field :cerca_od_cilindrico, class: 'form-control',
-                                :value => '%+.2f' % @orden_trabajo.cerca_od_cilindrico, :size => 5 %></td>
+                                :value => '%+.2f' % @work_order.cerca_od_cilindrico, :size => 5 %></td>
         <td>en</td>
         <td><%= form.text_field :cerca_od_grados, class: 'form-control', :size => 5 %></td>
       </tr>
@@ -173,10 +173,10 @@
       <tr>
         <td>Esf.</td>
         <td><%= form.text_field :cerca_oi_esferico, class: 'form-control',
-                                :value => '%+.2f' % @orden_trabajo.cerca_oi_esferico, :size => 5 %></td>
+                                :value => '%+.2f' % @work_order.cerca_oi_esferico, :size => 5 %></td>
         <td>Cil.</td>
         <td><%= form.text_field :cerca_oi_cilindrico, class: 'form-control',
-                                :value => '%+.2f' % @orden_trabajo.cerca_oi_cilindrico, :size => 5 %></td>
+                                :value => '%+.2f' % @work_order.cerca_oi_cilindrico, :size => 5 %></td>
         <td>en</td>
         <td><%= form.text_field :cerca_oi_grados, class: 'form-control', :size => 5 %></td>
       </tr>

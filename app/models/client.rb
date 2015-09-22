@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: clientes
+# Table name: clients
 #
 #  id                 :integer          not null, primary key
 #  nombre             :string(255)
@@ -15,7 +15,7 @@
 #
 
 # -*- encoding : utf-8 -*-
-class Cliente < ActiveRecord::Base
+class Client < ActiveRecord::Base
   attr_accessible :nombre, :apellidos, :domicilio, :telefono, :correo_electronico, :localidad, :observaciones
   cattr_reader :per_page
   @@per_page = 10
@@ -24,7 +24,7 @@ class Cliente < ActiveRecord::Base
   validates_uniqueness_of :correo_electronico, :allow_blank => true
   validates_format_of :correo_electronico, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :allow_blank => true
 
-  has_many :ordenes_trabajo
+  has_many :work_orders
 
   def self.search(search, page)
     paginate(

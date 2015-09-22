@@ -1,0 +1,26 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <tr>
+      <th>Client</th>
+      <th>Descripción</th>
+      <th>Fecha de creación</th>
+      <th>Fecha de actualización</th>
+      <th colspan="3">Acciones</th>
+    </tr>
+
+    <% for work_order in @work_orders %>
+        <tr>
+          <td><%= h work_order.client.nombre %></td>
+          <td><%= h work_order.descripcion %></td>
+          <td><%= h work_order.created_at.to_date %></td>
+          <td><%= h work_order.updated_at.to_date %></td>
+          <td><%= link_to 'Ver', [@client, work_order] %></td>
+          <td><%= link_to 'Editar', edit_client_work_order_path(@client, work_order) %></td>
+          <td><%= link_to 'Borrar', [@client, work_order], data: {confirm: "¿Está seguro de borrar la orden #{work_order.descripcion}?"}, :method => :delete %></td>
+        </tr>
+    <% end %>
+  </table>
+</div>
+
+<% params[:action] = "index" %>
+<%= will_paginate @work_orders, :prev_label => "&laquo; Anterior", :next_label => "Siguiente &raquo;" %>

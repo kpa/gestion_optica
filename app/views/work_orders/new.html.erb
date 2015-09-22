@@ -1,0 +1,13 @@
+<% @title = "Nueva órden de trabajo" %>
+<% @navbar = [link_to('<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Clients'.html_safe, clients_path), link_to('<span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;Órdenes de trabajo'.html_safe, client_work_orders_path(@client)), @title ] %>
+
+<%= error_messages_for :work_order %>
+
+<div class="table-responsive tblclient">
+    <%= form_for([@client, @work_order]) do |form| %>
+      <%= render :partial => 'form', :object => form %>
+      <%= form.submit 'Crear', :class => 'btn btn-warning pull-right' %>
+    <% end %>
+
+    <%= link_to '<span class="glyphicon glyphicon-circle-arrow-left"></span>&nbsp;&nbsp;Volver atrás'.html_safe, client_work_orders_path %>
+</div>

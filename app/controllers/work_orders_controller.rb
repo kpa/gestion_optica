@@ -1,103 +1,103 @@
 # -*- encoding : utf-8 -*-
 class OrdenesTrabajoController < ApplicationController
 
-  before_filter :find_cliente
+  before_filter :find_client
 
-  # GET /ordenes_trabajo
-  # GET /ordenes_trabajo.xml
+  # GET /work_orders
+  # GET /work_orders.xml
   def index
-    @ordenes_trabajo = @cliente.ordenes_trabajo.search params[:search], params[:page]
+    @work_orders = @client.work_orders.search params[:search], params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @ordenes_trabajo }
+      format.xml  { render :xml => @work_orders }
     end
   end
 
-  # GET /ordenes_trabajo/1
-  # GET /ordenes_trabajo/1.xml
+  # GET /work_orders/1
+  # GET /work_orders/1.xml
   def show
-    @orden_trabajo = OrdenTrabajo.find(params[:id])
+    @work_order = WorkOrder.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @orden_trabajo }
+      format.xml  { render :xml => @work_order }
     end
   end
 
-  # GET /ordenes_trabajo/new
-  # GET /ordenes_trabajo/new.xml
+  # GET /work_orders/new
+  # GET /work_orders/new.xml
   def new
-    @orden_trabajo = OrdenTrabajo.new
-    @orden_trabajo.cliente = @cliente
+    @work_order = WorkOrder.new
+    @work_order.client = @client
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @orden_trabajo }
+      format.xml  { render :xml => @work_order }
     end
   end
 
-  # GET /ordenes_trabajo/1/edit
+  # GET /work_orders/1/edit
   def edit
-    @orden_trabajo = OrdenTrabajo.find(params[:id])
+    @work_order = WorkOrder.find(params[:id])
   end
 
-  # POST /ordenes_trabajo
-  # POST /ordenes_trabajo.xml
+  # POST /work_orders
+  # POST /work_orders.xml
   def create
-    @orden_trabajo = OrdenTrabajo.new(params[:orden_trabajo])
-    @orden_trabajo.cliente = @cliente
+    @work_order = WorkOrder.new(params[:work_order])
+    @work_order.client = @client
      
     respond_to do |format|
-      if @orden_trabajo.save
+      if @work_order.save
         flash[:notice] = 'La órden de trabajo ha sido creada con éxito.'
-        format.html { redirect_to([@cliente, @orden_trabajo]) }
-        format.xml  { render :xml => @orden_trabajo, :status => :created, :location => @orden_trabajo }
+        format.html { redirect_to([@client, @work_order]) }
+        format.xml  { render :xml => @work_order, :status => :created, :location => @work_order }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @orden_trabajo.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @work_order.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # PUT /ordenes_trabajo/1
-  # PUT /ordenes_trabajo/1.xml
+  # PUT /work_orders/1
+  # PUT /work_orders/1.xml
   def update
-    @orden_trabajo = OrdenTrabajo.find(params[:id])
-    @orden_trabajo.cliente = @cliente
+    @work_order = WorkOrder.find(params[:id])
+    @work_order.client = @client
 
     respond_to do |format|
-      if @orden_trabajo.update_attributes(params[:orden_trabajo])
+      if @work_order.update_attributes(params[:work_order])
         flash[:notice] = 'La órden de trabajo ha sido editada con éxito.'
-        format.html { redirect_to([@cliente, @orden_trabajo]) }
+        format.html { redirect_to([@client, @work_order]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @orden_trabajo.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @work_order.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /ordenes_trabajo/1
-  # DELETE /ordenes_trabajo/1.xml
+  # DELETE /work_orders/1
+  # DELETE /work_orders/1.xml
   def destroy
-    @orden_trabajo = @cliente.ordenes_trabajo.find(params[:id])
-    @orden_trabajo.destroy
+    @work_order = @client.work_orders.find(params[:id])
+    @work_order.destroy
 
     respond_to do |format|
-      format.html { redirect_to(ordenes_trabajo_url) }
+      format.html { redirect_to(work_orders_url) }
       format.xml  { head :ok }
     end
   end
 
   def find_items
-    @ordenes_trabajo = @cliente.ordenes_trabajo.search params[:search], params[:page]
+    @work_orders = @client.work_orders.search params[:search], params[:page]
     render :partial => 'search'
   end
 
-  def find_cliente
-    @cliente = Cliente.first(:conditions => ['id  = ?', params[:cliente_id]])
-    redirect_to clientes_url unless @cliente
+  def find_client
+    @client = Client.first(:conditions => ['id  = ?', params[:client_id]])
+    redirect_to clients_url unless @client
   end
 
   def import_file
@@ -116,28 +116,28 @@ class OrdenesTrabajoController < ApplicationController
     grid.each_with_index do |current_row, numero_fila|
       errores_fila = Array.new
       if current_row[0].blank?
-        errores_fila << 'Debe especificar un cliente'
+        errores_fila << 'Debe especificar un client'
         errores << {:fila => numero_fila + 1, :mensajes => errores_fila}
         total_ignoradas += 1
         next
       end
-      cliente = Cliente.first(
+      client = Client.first(
           :conditions => {
               :nombre => current_row[0],
               :apellidos => current_row[1],
               :telefono => current_row[40]
           }
       )
-      if cliente.blank?
-        cliente = Cliente.new(
+      if client.blank?
+        client = Client.new(
             :nombre => current_row[0],
             :apellidos => current_row[1],
             :telefono => current_row[40]
         )
-        if cliente.valid?
-          cliente.save
+        if client.valid?
+          client.save
         else
-          errores << {:fila => numero_fila + 1, :mensajes => cliente.errors.full_messages.collect {|i| 'Cliente: ' + i}}
+          errores << {:fila => numero_fila + 1, :mensajes => client.errors.full_messages.collect {|i| 'Client: ' + i}}
           total_ignoradas += 1
           next
         end
@@ -152,7 +152,7 @@ class OrdenesTrabajoController < ApplicationController
       fecha_receta = current_row[41].to_date rescue nil
       fecha_receta += 2000.years if !fecha_receta.nil? && fecha_receta.year < 2000
 
-      orden_trabajo = cliente.ordenes_trabajo.build(
+      work_order = client.work_orders.build(
           :descripcion => current_row[1],
           :fecha => fecha,
           :fecha_entrega => fecha_entrega,
@@ -194,11 +194,11 @@ class OrdenesTrabajoController < ApplicationController
           :senya => current_row[39],
           :fecha_receta => fecha_receta
       )
-      if orden_trabajo.valid?
-        orden_trabajo.save
+      if work_order.valid?
+        work_order.save
         total_cargadas += 1
       else
-        errores << {:fila => numero_fila + 1, :mensajes => orden_trabajo.errors.full_messages}
+        errores << {:fila => numero_fila + 1, :mensajes => work_order.errors.full_messages}
         total_ignoradas += 1
       end
     end

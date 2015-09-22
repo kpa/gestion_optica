@@ -1,17 +1,17 @@
 # -*- encoding : utf-8 -*-
 GestionOpticaArena::Application.routes.draw do
-  resources :ordenes_trabajo do
+  resources :work_orders do
     collection do
       get :find_items
       get :import_file
     end
   end
 
-  resources :clientes do
+  resources :clients do
     collection do
       get :find_items
     end
-    resources :ordenes_trabajo
+    resources :work_orders
   end
 
   # The priority is based upon order of creation:
