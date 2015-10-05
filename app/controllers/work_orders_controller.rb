@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-class OrdenesTrabajoController < ApplicationController
+class WorkOrdersController < ApplicationController
 
   before_filter :find_client
 
@@ -123,16 +123,16 @@ class OrdenesTrabajoController < ApplicationController
       end
       client = Client.first(
           :conditions => {
-              :nombre => current_row[0],
-              :apellidos => current_row[1],
-              :telefono => current_row[40]
+              :name => current_row[0],
+              :surname => current_row[1],
+              :phone_number => current_row[40]
           }
       )
       if client.blank?
         client = Client.new(
-            :nombre => current_row[0],
-            :apellidos => current_row[1],
-            :telefono => current_row[40]
+            :name => current_row[0],
+            :surname => current_row[1],
+            :phone_number => current_row[40]
         )
         if client.valid?
           client.save
@@ -143,56 +143,56 @@ class OrdenesTrabajoController < ApplicationController
         end
       end
 
-      fecha = current_row[2].to_date rescue nil
-      fecha += 2000.years if !fecha.nil? && fecha.year < 2000
+      date = current_row[2].to_date rescue nil
+      date += 2000.years if !date.nil? && date.year < 2000
 
-      fecha_entrega = current_row[3].to_date rescue nil
-      fecha_entrega += 2000.years if !fecha_entrega.nil? && fecha_entrega.year < 2000
+      delivery_date = current_row[3].to_date rescue nil
+      delivery_date += 2000.years if !delivery_date.nil? && delivery_date.year < 2000
 
-      fecha_receta = current_row[41].to_date rescue nil
-      fecha_receta += 2000.years if !fecha_receta.nil? && fecha_receta.year < 2000
+      prescription_date = current_row[41].to_date rescue nil
+      prescription_date += 2000.years if !prescription_date.nil? && prescription_date.year < 2000
 
       work_order = client.work_orders.build(
-          :descripcion => current_row[1],
-          :fecha => fecha,
-          :fecha_entrega => fecha_entrega,
-          :lejos_od_esferico => current_row[4],
-          :lejos_od_cilindrico => current_row[5],
-          :lejos_od_grados => current_row[6],
-          :lejos_oi_esferico => current_row[7],
-          :lejos_oi_cilindrico => current_row[8],
-          :lejos_oi_grados => current_row[9],
-          :lejos_color => current_row[10],
-          :lejos_armazon => current_row[11],
-          :lejos_tipo_lente => current_row[12],
-          :lejos_distancia_interpupilar => current_row[13],
-          :intermedio_od_esferico => current_row[14],
-          :intermedio_od_cilindrico => current_row[15],
-          :intermedio_od_grados => current_row[16],
-          :intermedio_oi_esferico => current_row[17],
-          :intermedio_oi_cilindrico => current_row[18],
-          :intermedio_oi_grados => current_row[19],
-          :intermedio_color => current_row[20],
-          :intermedio_armazon => current_row[21],
-          :intermedio_tipo_lente => current_row[22],
-          :intermedio_distancia_interpupilar => current_row[23],
-          :cerca_od_esferico => current_row[24],
-          :cerca_od_cilindrico => current_row[25],
-          :cerca_od_grados => current_row[26],
-          :cerca_oi_esferico => current_row[27],
-          :cerca_oi_cilindrico => current_row[28],
-          :cerca_oi_grados => current_row[29],
-          :cerca_color => current_row[30],
-          :cerca_armazon => current_row[31],
-          :cerca_tipo_lente => current_row[32],
-          :cerca_distancia_interpupilar => current_row[33],
+          :description => current_row[1],
+          :date => date,
+          :delivery_date => delivery_date,
+          :distance_right_sph => current_row[4],
+          :distance_right_cyl => current_row[5],
+          :distance_right_axis => current_row[6],
+          :distance_left_sph => current_row[7],
+          :distance_left_cyl => current_row[8],
+          :distance_left_axis => current_row[9],
+          :distance_lens_color => current_row[10],
+          :distance_frame => current_row[11],
+          :distance_lens_type => current_row[12],
+          :distance_ipd => current_row[13],
+          :intermediate_right_sph => current_row[14],
+          :intermediate_right_cyl => current_row[15],
+          :intermediate_right_axis => current_row[16],
+          :intermediate_left_sph => current_row[17],
+          :intermediate_left_cyl => current_row[18],
+          :intermediate_left_axis => current_row[19],
+          :intermediate_lens_color => current_row[20],
+          :intermediate_frame => current_row[21],
+          :intermediate_lens_type => current_row[22],
+          :intermediate_ipd => current_row[23],
+          :near_right_sph => current_row[24],
+          :near_right_cyl => current_row[25],
+          :near_right_axis => current_row[26],
+          :near_left_sph => current_row[27],
+          :near_left_cyl => current_row[28],
+          :near_left_axis => current_row[29],
+          :near_lens_color => current_row[30],
+          :near_frame => current_row[31],
+          :near_lens_type => current_row[32],
+          :near_ipd => current_row[33],
           :bifocal => current_row[34],
-          :altura => current_row[35],
-          :observaciones => current_row[36],
-          :nombre_doctor => current_row[37],
-          :total => current_row[38],
-          :senya => current_row[39],
-          :fecha_receta => fecha_receta
+          :height => current_row[35],
+          :comments => current_row[36],
+          :doctor_name => current_row[37],
+          :invoice => current_row[38],
+          :payment_on_account => current_row[39],
+          :prescription_date => prescription_date
       )
       if work_order.valid?
         work_order.save

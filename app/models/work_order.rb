@@ -2,77 +2,77 @@
 #
 # Table name: work_orders
 #
-#  id                                :integer          not null, primary key
-#  descripcion                       :string(255)
-#  fecha                             :date
-#  fecha_entrega                     :date
-#  numero                            :integer
-#  lejos_od_esferico                 :decimal(10, 2)   default(0.0)
-#  lejos_od_cilindrico               :decimal(10, 2)   default(0.0)
-#  lejos_od_grados                   :integer          default(0)
-#  lejos_oi_esferico                 :decimal(10, 2)   default(0.0)
-#  lejos_oi_cilindrico               :decimal(10, 2)   default(0.0)
-#  lejos_oi_grados                   :integer          default(0)
-#  lejos_distancia_interpupilar      :decimal(10, 2)   default(0.0)
-#  lejos_color                       :string(255)
-#  lejos_armazon                     :string(255)
-#  lejos_tipo_lente                  :string(255)
-#  cerca_od_esferico                 :decimal(10, 2)   default(0.0)
-#  cerca_od_cilindrico               :decimal(10, 2)   default(0.0)
-#  cerca_od_grados                   :integer          default(0)
-#  cerca_oi_esferico                 :decimal(10, 2)   default(0.0)
-#  cerca_oi_cilindrico               :decimal(10, 2)   default(0.0)
-#  cerca_oi_grados                   :integer          default(0)
-#  cerca_distancia_interpupilar      :decimal(10, 2)   default(0.0)
-#  cerca_color                       :string(255)
-#  cerca_armazon                     :string(255)
-#  cerca_tipo_lente                  :string(255)
-#  intermedio_od_esferico            :decimal(10, 2)   default(0.0)
-#  intermedio_od_cilindrico          :decimal(10, 2)   default(0.0)
-#  intermedio_od_grados              :integer          default(0)
-#  intermedio_oi_esferico            :decimal(10, 2)   default(0.0)
-#  intermedio_oi_cilindrico          :decimal(10, 2)   default(0.0)
-#  intermedio_oi_grados              :integer          default(0)
-#  intermedio_distancia_interpupilar :decimal(10, 2)   default(0.0)
-#  intermedio_color                  :string(255)
-#  intermedio_armazon                :string(255)
-#  intermedio_tipo_lente             :string(255)
-#  bifocal                           :string(255)
-#  altura                            :decimal(10, 2)   default(0.0)
-#  observaciones                     :string(255)
-#  total                             :decimal(10, 2)   default(0.0)
-#  senya                             :decimal(10, 2)   default(0.0)
-#  saldo                             :decimal(10, 2)   default(0.0)
-#  nombre_doctor                     :string(255)
-#  client_id                        :integer
-#  created_at                        :datetime
-#  updated_at                        :datetime
-#  fecha_receta                      :date
+#  id                      :integer          not null, primary key
+#  description             :string(255)
+#  date                    :date
+#  delivery_date           :date
+#  order_number            :integer
+#  distance_right_sph      :decimal(10, 2)   default(0.0)
+#  distance_right_cyl      :decimal(10, 2)   default(0.0)
+#  distance_right_axis     :integer          default(0)
+#  distance_left_sph       :decimal(10, 2)   default(0.0)
+#  distance_left_cyl       :decimal(10, 2)   default(0.0)
+#  distance_left_axis      :integer          default(0)
+#  distance_ipd            :decimal(10, 2)   default(0.0)
+#  distance_lens_color     :string(255)
+#  distance_frame          :string(255)
+#  distance_lens_type      :string(255)
+#  near_right_sph          :decimal(10, 2)   default(0.0)
+#  near_right_cyl          :decimal(10, 2)   default(0.0)
+#  near_right_axis         :integer          default(0)
+#  near_left_sph           :decimal(10, 2)   default(0.0)
+#  near_left_cyl           :decimal(10, 2)   default(0.0)
+#  near_left_axis          :integer          default(0)
+#  near_ipd                :decimal(10, 2)   default(0.0)
+#  near_lens_color         :string(255)
+#  near_frame              :string(255)
+#  near_lens_type          :string(255)
+#  intermediate_right_sph  :decimal(10, 2)   default(0.0)
+#  intermediate_right_cyl  :decimal(10, 2)   default(0.0)
+#  intermediate_right_axis :integer          default(0)
+#  intermediate_left_sph   :decimal(10, 2)   default(0.0)
+#  intermediate_left_cyl   :decimal(10, 2)   default(0.0)
+#  intermediate_left_axis  :integer          default(0)
+#  intermediate_ipd        :decimal(10, 2)   default(0.0)
+#  intermediate_lens_color :string(255)
+#  intermediate_frame      :string(255)
+#  intermediate_lens_type  :string(255)
+#  bifocal                 :string(255)
+#  height                  :decimal(10, 2)   default(0.0)
+#  comments                :string(255)
+#  invoice                 :decimal(10, 2)   default(0.0)
+#  payment_on_account      :decimal(10, 2)   default(0.0)
+#  balance_due             :decimal(10, 2)   default(0.0)
+#  doctor_name             :string(255)
+#  client_id               :integer
+#  created_at              :datetime
+#  updated_at              :datetime
+#  prescription_date       :date
 #
 
 # -*- encoding : utf-8 -*-
 class WorkOrder < ActiveRecord::Base
-  attr_accessible :descripcion, :fecha, :fecha_entrega, :lejos_od_esferico, :lejos_od_cilindrico, :lejos_od_grados, :lejos_oi_esferico, :lejos_oi_cilindrico, :lejos_oi_grados, :lejos_color, :lejos_armazon, :lejos_tipo_lente, :lejos_distancia_interpupilar, :intermedio_od_esferico, :intermedio_od_cilindrico, :intermedio_od_grados, :intermedio_oi_esferico, :intermedio_oi_cilindrico, :intermedio_oi_grados, :intermedio_color, :intermedio_armazon, :intermedio_tipo_lente, :intermedio_distancia_interpupilar, :cerca_od_esferico, :cerca_od_cilindrico, :cerca_od_grados, :cerca_oi_esferico, :cerca_oi_cilindrico, :cerca_oi_grados, :cerca_color, :cerca_armazon, :cerca_tipo_lente, :cerca_distancia_interpupilar, :bifocal, :altura, :observaciones, :nombre_doctor, :fecha_receta, :total, :senya
+  attr_accessible :description, :date, :delivery_date, :distance_right_sph, :distance_right_cyl, :distance_right_axis, :distance_left_sph, :distance_left_cyl, :distance_left_axis, :distance_lens_color, :distance_frame, :distance_lens_type, :distance_ipd, :intermediate_right_sph, :intermediate_right_cyl, :intermediate_right_axis, :intermediate_left_sph, :intermediate_left_cyl, :intermediate_left_axis, :intermediate_lens_color, :intermediate_frame, :intermediate_lens_type, :intermediate_ipd, :near_right_sph, :near_right_cyl, :near_right_axis, :near_left_sph, :near_left_cyl, :near_left_axis, :near_lens_color, :near_frame, :near_lens_type, :near_ipd, :bifocal, :height, :comments, :doctor_name, :prescription_date, :invoice, :payment_on_account
   cattr_reader :per_page
   @@per_page = 10
 
   belongs_to :client
-  before_save :calcula_saldo
-  before_create :calcula_numero
-  
+  before_save :compute_balance_due
+  before_create :compute_order_number
+
   validates_presence_of :client
-  
-  def calcula_saldo
-    self.saldo = self.total.to_i - self.senya.to_i
+
+  def compute_balance_due
+    self.balance_due = self.invoice.to_i - self.payment_on_account.to_i
   end
-  
-  def calcula_numero
-    antiguo_numero = WorkOrder.maximum(:numero) || 0
-    self.numero = antiguo_numero + 1
+
+  def compute_order_number
+    old_number = WorkOrder.maximum(:order_number) || 0
+    self.number = old_number + 1
   end
 
   def self.search(search, page)
-    paginate :page => page, :include => :client, :conditions => ['descripcion LIKE ? OR numero LIKE ? OR clients.nombre LIKE ? OR clients.domicilio LIKE ? OR clients.telefono LIKE ? OR clients.localidad LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"]
+    paginate :page => page, :include => :client, :conditions => ['description LIKE ? OR order_number LIKE ? OR clients.name LIKE ? OR clients.address LIKE ? OR clients.phone_number LIKE ? OR clients.city LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"]
   end
 end
 

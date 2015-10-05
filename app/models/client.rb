@@ -2,27 +2,27 @@
 #
 # Table name: clients
 #
-#  id                 :integer          not null, primary key
-#  nombre             :string(255)
-#  domicilio          :string(255)
-#  telefono           :string(255)
-#  localidad          :string(255)
-#  created_at         :datetime
-#  updated_at         :datetime
-#  apellidos          :string(255)
-#  correo_electronico :string(255)
-#  observaciones      :string(255)
+#  id           :integer          not null, primary key
+#  name         :string(255)
+#  address      :string(255)
+#  phone_number :string(255)
+#  city         :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
+#  surname      :string(255)
+#  email        :string(255)
+#  comments     :string(255)
 #
 
 # -*- encoding : utf-8 -*-
 class Client < ActiveRecord::Base
-  attr_accessible :nombre, :apellidos, :domicilio, :telefono, :correo_electronico, :localidad, :observaciones
+  attr_accessible :name, :surname, :address, :phone_number, :email, :city, :comments
   cattr_reader :per_page
   @@per_page = 10
-  validates_presence_of :nombre, :apellidos
-  validates_uniqueness_of :nombre, :scope => :apellidos
-  validates_uniqueness_of :correo_electronico, :allow_blank => true
-  validates_format_of :correo_electronico, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :allow_blank => true
+  validates_presence_of :name, :surname
+  validates_uniqueness_of :name, :scope => :surname
+  validates_uniqueness_of :email, :allow_blank => true
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :allow_blank => true
 
   has_many :work_orders
 
@@ -30,22 +30,22 @@ class Client < ActiveRecord::Base
     paginate(
       :page => page,
       :conditions => [
-        'nombre LIKE ?
-        OR apellidos LIKE ?
-        OR CONCAT(nombre, \' \', apellidos) LIKE ?
-        OR CONCAT(apellidos, \', \', nombre) LIKE ?
-        OR domicilio LIKE ?
-        OR telefono LIKE ?
-        OR correo_electronico LIKE ?
-        OR localidad LIKE ?',
+        'name LIKE ?
+        OR surname LIKE ?
+        OR CONCAT(name, \' \', surname) LIKE ?
+        OR CONCAT(surname, \', \', name) LIKE ?
+        OR address LIKE ?
+        OR phone_number LIKE ?
+        OR email LIKE ?
+        OR city LIKE ?',
         "%#{search}%", "%#{search}%", "%#{search}%", 
         "%#{search}%", "%#{search}%", "%#{search}%",
         "%#{search}%", "%#{search}%"]
     )
   end
 
-  def nombre_completo
-    "#{nombre} #{apellidos}"
+  def full_name
+    "#{name} #{surname}"
   end
 
 end

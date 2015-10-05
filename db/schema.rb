@@ -11,66 +11,66 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922133455) do
+ActiveRecord::Schema.define(version: 20150928194621) do
 
   create_table "clients", force: true do |t|
-    t.string   "nombre"
-    t.string   "domicilio"
-    t.string   "telefono"
-    t.string   "localidad"
+    t.string   "name"
+    t.string   "address"
+    t.string   "phone_number"
+    t.string   "city"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "apellidos"
-    t.string   "correo_electronico"
-    t.string   "observaciones"
+    t.string   "surname"
+    t.string   "email"
+    t.string   "comments"
   end
 
   create_table "work_orders", force: true do |t|
-    t.string   "descripcion"
-    t.date     "fecha"
-    t.date     "fecha_entrega"
-    t.integer  "numero"
-    t.decimal  "lejos_od_esferico",                 precision: 10, scale: 2, default: 0.0
-    t.decimal  "lejos_od_cilindrico",               precision: 10, scale: 2, default: 0.0
-    t.integer  "lejos_od_grados",                                            default: 0
-    t.decimal  "lejos_oi_esferico",                 precision: 10, scale: 2, default: 0.0
-    t.decimal  "lejos_oi_cilindrico",               precision: 10, scale: 2, default: 0.0
-    t.integer  "lejos_oi_grados",                                            default: 0
-    t.decimal  "lejos_distancia_interpupilar",      precision: 10, scale: 2, default: 0.0
-    t.string   "lejos_color"
-    t.string   "lejos_armazon"
-    t.string   "lejos_tipo_lente"
-    t.decimal  "cerca_od_esferico",                 precision: 10, scale: 2, default: 0.0
-    t.decimal  "cerca_od_cilindrico",               precision: 10, scale: 2, default: 0.0
-    t.integer  "cerca_od_grados",                                            default: 0
-    t.decimal  "cerca_oi_esferico",                 precision: 10, scale: 2, default: 0.0
-    t.decimal  "cerca_oi_cilindrico",               precision: 10, scale: 2, default: 0.0
-    t.integer  "cerca_oi_grados",                                            default: 0
-    t.decimal  "cerca_distancia_interpupilar",      precision: 10, scale: 2, default: 0.0
-    t.string   "cerca_color"
-    t.string   "cerca_armazon"
-    t.string   "cerca_tipo_lente"
-    t.decimal  "intermedio_od_esferico",            precision: 10, scale: 2, default: 0.0
-    t.decimal  "intermedio_od_cilindrico",          precision: 10, scale: 2, default: 0.0
-    t.integer  "intermedio_od_grados",                                       default: 0
-    t.decimal  "intermedio_oi_esferico",            precision: 10, scale: 2, default: 0.0
-    t.decimal  "intermedio_oi_cilindrico",          precision: 10, scale: 2, default: 0.0
-    t.integer  "intermedio_oi_grados",                                       default: 0
-    t.decimal  "intermedio_distancia_interpupilar", precision: 10, scale: 2, default: 0.0
-    t.string   "intermedio_color"
-    t.string   "intermedio_armazon"
-    t.string   "intermedio_tipo_lente"
+    t.string   "description"
+    t.date     "date"
+    t.date     "delivery_date"
+    t.integer  "order_number"
+    t.decimal  "distance_right_sph",      precision: 10, scale: 2, default: 0.0
+    t.decimal  "distance_right_cyl",      precision: 10, scale: 2, default: 0.0
+    t.integer  "distance_right_axis",                              default: 0
+    t.decimal  "distance_left_sph",       precision: 10, scale: 2, default: 0.0
+    t.decimal  "distance_left_cyl",       precision: 10, scale: 2, default: 0.0
+    t.integer  "distance_left_axis",                               default: 0
+    t.decimal  "distance_ipd",            precision: 10, scale: 2, default: 0.0
+    t.string   "distance_lens_color"
+    t.string   "distance_frame"
+    t.string   "distance_lens_type"
+    t.decimal  "near_right_sph",          precision: 10, scale: 2, default: 0.0
+    t.decimal  "near_right_cyl",          precision: 10, scale: 2, default: 0.0
+    t.integer  "near_right_axis",                                  default: 0
+    t.decimal  "near_left_sph",           precision: 10, scale: 2, default: 0.0
+    t.decimal  "near_left_cyl",           precision: 10, scale: 2, default: 0.0
+    t.integer  "near_left_axis",                                   default: 0
+    t.decimal  "near_ipd",                precision: 10, scale: 2, default: 0.0
+    t.string   "near_lens_color"
+    t.string   "near_frame"
+    t.string   "near_lens_type"
+    t.decimal  "intermediate_right_sph",  precision: 10, scale: 2, default: 0.0
+    t.decimal  "intermediate_right_cyl",  precision: 10, scale: 2, default: 0.0
+    t.integer  "intermediate_right_axis",                          default: 0
+    t.decimal  "intermediate_left_sph",   precision: 10, scale: 2, default: 0.0
+    t.decimal  "intermediate_left_cyl",   precision: 10, scale: 2, default: 0.0
+    t.integer  "intermediate_left_axis",                           default: 0
+    t.decimal  "intermediate_ipd",        precision: 10, scale: 2, default: 0.0
+    t.string   "intermediate_lens_color"
+    t.string   "intermediate_frame"
+    t.string   "intermediate_lens_type"
     t.string   "bifocal"
-    t.decimal  "altura",                            precision: 10, scale: 2, default: 0.0
-    t.string   "observaciones"
-    t.decimal  "total",                             precision: 10, scale: 2, default: 0.0
-    t.decimal  "senya",                             precision: 10, scale: 2, default: 0.0
-    t.decimal  "saldo",                             precision: 10, scale: 2, default: 0.0
-    t.string   "nombre_doctor"
-    t.integer  "cliente_id"
+    t.decimal  "height",                  precision: 10, scale: 2, default: 0.0
+    t.string   "comments"
+    t.decimal  "invoice",                 precision: 10, scale: 2, default: 0.0
+    t.decimal  "payment_on_account",      precision: 10, scale: 2, default: 0.0
+    t.decimal  "balance_due",             precision: 10, scale: 2, default: 0.0
+    t.string   "doctor_name"
+    t.integer  "client_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.date     "fecha_receta"
+    t.date     "prescription_date"
   end
 
 end

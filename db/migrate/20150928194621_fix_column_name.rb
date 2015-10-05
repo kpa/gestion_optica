@@ -1,0 +1,54 @@
+class FixColumnName < ActiveRecord::Migration
+  def change
+    rename_column :clients, :nombre, :name
+    rename_column :clients, :domicilio, :address
+    rename_column :clients, :telefono, :phone_number
+    rename_column :clients, :localidad, :city
+    rename_column :clients, :apellidos, :surname
+    rename_column :clients, :correo_electronico, :email
+    rename_column :clients, :observaciones, :comments
+
+    rename_column :work_orders, :descripcion, :description
+    rename_column :work_orders, :fecha, :date
+    rename_column :work_orders, :fecha_entrega, :delivery_date
+    rename_column :work_orders, :numero, :order_number
+    rename_column :work_orders, :lejos_od_esferico, :distance_right_sph
+    rename_column :work_orders, :lejos_od_cilindrico, :distance_right_cyl
+    rename_column :work_orders, :lejos_od_grados, :distance_right_axis
+    rename_column :work_orders, :lejos_oi_esferico, :distance_left_sph
+    rename_column :work_orders, :lejos_oi_cilindrico, :distance_left_cyl
+    rename_column :work_orders, :lejos_oi_grados, :distance_left_axis
+    rename_column :work_orders, :lejos_color, :distance_lens_color
+    rename_column :work_orders, :lejos_armazon, :distance_frame
+    rename_column :work_orders, :lejos_tipo_lente, :distance_lens_type
+    rename_column :work_orders, :lejos_distancia_interpupilar, :distance_ipd
+    rename_column :work_orders, :intermedio_od_esferico, :intermediate_right_sph
+    rename_column :work_orders, :intermedio_od_cilindrico, :intermediate_right_cyl
+    rename_column :work_orders, :intermedio_od_grados, :intermediate_right_axis
+    rename_column :work_orders, :intermedio_oi_esferico, :intermediate_left_sph
+    rename_column :work_orders, :intermedio_oi_cilindrico, :intermediate_left_cyl
+    rename_column :work_orders, :intermedio_oi_grados, :intermediate_left_axis
+    rename_column :work_orders, :intermedio_color, :intermediate_lens_color
+    rename_column :work_orders, :intermedio_armazon, :intermediate_frame
+    rename_column :work_orders, :intermedio_tipo_lente, :intermediate_lens_type
+    rename_column :work_orders, :intermedio_distancia_interpupilar, :intermediate_ipd
+    rename_column :work_orders, :cerca_od_esferico, :near_right_sph
+    rename_column :work_orders, :cerca_od_cilindrico, :near_right_cyl
+    rename_column :work_orders, :cerca_od_grados, :near_right_axis
+    rename_column :work_orders, :cerca_oi_esferico, :near_left_sph
+    rename_column :work_orders, :cerca_oi_cilindrico, :near_left_cyl
+    rename_column :work_orders, :cerca_oi_grados, :near_left_axis
+    rename_column :work_orders, :cerca_color, :near_lens_color
+    rename_column :work_orders, :cerca_armazon, :near_frame
+    rename_column :work_orders, :cerca_tipo_lente, :near_lens_type
+    rename_column :work_orders, :cerca_distancia_interpupilar, :near_ipd
+    rename_column :work_orders, :altura, :height
+    rename_column :work_orders, :observaciones, :comments
+    rename_column :work_orders, :nombre_doctor, :doctor_name
+    rename_column :work_orders, :total, :invoice
+    rename_column :work_orders, :senya, :payment_on_account
+    rename_column :work_orders, :fecha_receta, :prescription_date
+    rename_column :work_orders, :saldo, :balance_due
+    rename_column :work_orders, :cliente_id, :client_id
+  end
+end

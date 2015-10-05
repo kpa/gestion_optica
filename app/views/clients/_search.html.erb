@@ -14,16 +14,16 @@
 
     <% for client in @clients %>
       <tr>
-        <td><%=h client.nombre %></td>
-        <td><%=h client.apellidos %></td>
-        <td><%=h client.domicilio %></td>
-        <td><%=h client.localidad %></td>
-        <td><%=h client.telefono %></td>
-        <td><%=h client.correo_electronico %></td>
-        <td><%=h client.observaciones %></td>
+        <td><%=h client.name %></td>
+        <td><%=h client.surname %></td>
+        <td><%=h client.address %></td>
+        <td><%=h client.city %></td>
+        <td><%=h client.phone_number %></td>
+        <td><%=h client.email %></td>
+        <td><%=h client.comments %></td>
         <td><%= link_to 'Ver', client %></td>
         <td><%= link_to 'Editar', edit_client_path(client) %></td>
-        <td><%= link_to 'Borrar', client, data: {confirm: "¿Está seguro de borrar al client #{client.nombre}?"}, :method => :delete %></td>
+        <td><%= link_to 'Borrar', client, data: {confirm: "¿Está seguro de borrar al client #{client.name}?"}, :method => :delete %></td>
         <td class="jobs"><%= link_to 'Órdenes de trabajo', client_work_orders_path(client) %></td>
       </tr>
     <% end %>

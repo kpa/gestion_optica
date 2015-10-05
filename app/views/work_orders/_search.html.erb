@@ -10,13 +10,13 @@
 
     <% for work_order in @work_orders %>
         <tr>
-          <td><%= h work_order.client.nombre %></td>
-          <td><%= h work_order.descripcion %></td>
+          <td><%= h work_order.client.name %></td>
+          <td><%= h work_order.description %></td>
           <td><%= h work_order.created_at.to_date %></td>
           <td><%= h work_order.updated_at.to_date %></td>
           <td><%= link_to 'Ver', [@client, work_order] %></td>
           <td><%= link_to 'Editar', edit_client_work_order_path(@client, work_order) %></td>
-          <td><%= link_to 'Borrar', [@client, work_order], data: {confirm: "¿Está seguro de borrar la orden #{work_order.descripcion}?"}, :method => :delete %></td>
+          <td><%= link_to 'Borrar', [@client, work_order], data: {confirm: "¿Está seguro de borrar la orden #{work_order.description}?"}, :method => :delete %></td>
         </tr>
     <% end %>
   </table>
