@@ -6,3 +6,15 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
+
+prescription_distance = [ 'Distance', 'Intermediate', 'Near' ]
+
+prescription_distance.each do |name|
+  PrescriptionDistance.create( name: name )
+end
+
+eyeglasses_types = [ 'Monofocal', 'Bifocal', 'Multifocal', 'Other' ]
+
+eyeglasses_types.each do |name|
+  EyeglassesType.create( name: name )
+end
