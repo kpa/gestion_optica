@@ -96,7 +96,7 @@ class WorkOrdersController < ApplicationController
   end
 
   def find_client
-    @client = Client.first(:conditions => ['id  = ?', params[:client_id]])
+    @client = Client.where(id: params[:client_id]).first
     redirect_to clients_url unless @client
   end
 

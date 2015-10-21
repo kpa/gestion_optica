@@ -68,11 +68,13 @@ class WorkOrder < ActiveRecord::Base
 
   def compute_order_number
     old_number = WorkOrder.maximum(:order_number) || 0
-    self.number = old_number + 1
+    self.order_number = old_number + 1
   end
 
   def self.search(search, page)
-    paginate :page => page, :include => :client, :conditions => ['description LIKE ? OR order_number LIKE ? OR clients.name LIKE ? OR clients.address LIKE ? OR clients.phone_number LIKE ? OR clients.city LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"]
+    where(
+        'description LIKE ? OR order_number LIKE ? OR clients.name LIKE ? OR clients.address LIKE ? OR clients.phone_number LIKE ? OR clients.city LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"
+    ).includes(:client).references(:clients).paginate(:page => page)
   end
 end
 

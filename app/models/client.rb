@@ -27,9 +27,7 @@ class Client < ActiveRecord::Base
   has_many :work_orders
 
   def self.search(search, page)
-    paginate(
-      :page => page,
-      :conditions => [
+    where(
         'name LIKE ?
         OR surname LIKE ?
         OR CONCAT(name, \' \', surname) LIKE ?
@@ -38,9 +36,11 @@ class Client < ActiveRecord::Base
         OR phone_number LIKE ?
         OR email LIKE ?
         OR city LIKE ?',
-        "%#{search}%", "%#{search}%", "%#{search}%", 
         "%#{search}%", "%#{search}%", "%#{search}%",
-        "%#{search}%", "%#{search}%"]
+        "%#{search}%", "%#{search}%", "%#{search}%",
+        "%#{search}%", "%#{search}%"
+    ).paginate(
+        :page => page
     )
   end
 

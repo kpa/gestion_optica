@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.all
+//= require jquery-ui
 
 // Append the function to the "document ready" chain
 jQuery(function($) {

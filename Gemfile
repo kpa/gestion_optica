@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0'
+gem 'rails', '4.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -30,8 +30,13 @@ gem 'jquery-rails'
 gem "annotate", "~> 2.5.0"
 
 # Will paginate
-gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate', '~> 3.0.6'
 
 gem 'dynamic_form'
 gem 'jquery-ui-rails'
 gem 'protected_attributes'
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
