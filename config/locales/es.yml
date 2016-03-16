@@ -1,0 +1,12 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  client: "cliente"
+  clients: "clientes"
+  new: "nuevo"
+  show: "ver"
+  import_wo: "importar órdenes de trabajo"
+  management_system: "sistema de gestión"
+  welcome: "bienvenido"
+  log_out: "Cerrar sesión"

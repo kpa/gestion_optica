@@ -1,11 +1,11 @@
 # -*- encoding : utf-8 -*-
 module ApplicationHelper
   def site_name
-    "Gestión de óptica"
+    t("management_system").capitalize
   end
 
   def link_cierre_sesion
-    link_to 'Cerrar sesión', :controller => :user, :action=> :logout
+    link_to t("log_out"), :controller => :user, :action=> :logout
   end
 
   # Muestra una caja con mensajes para el usuario.

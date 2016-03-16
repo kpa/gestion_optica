@@ -116,7 +116,7 @@ class WorkOrdersController < ApplicationController
     grid.each_with_index do |current_row, numero_fila|
       errores_fila = Array.new
       if current_row[0].blank?
-        errores_fila << 'Debe especificar un client'
+        errores_fila << 'Debe especificar un cliente'
         errores << {:fila => numero_fila + 1, :mensajes => errores_fila}
         total_ignoradas += 1
         next
@@ -137,7 +137,7 @@ class WorkOrdersController < ApplicationController
         if client.valid?
           client.save
         else
-          errores << {:fila => numero_fila + 1, :mensajes => client.errors.full_messages.collect {|i| 'Client: ' + i}}
+          errores << {:fila => numero_fila + 1, :mensajes => client.errors.full_messages.collect {|i| 'Cliente: ' + i}}
           total_ignoradas += 1
           next
         end

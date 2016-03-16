@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8"/>
@@ -57,11 +57,11 @@
     </nav>
 
     <nav class="navbar navbar-default navbar-left menu-left">
-      <h3>Clients</h3>
+      <h3><%= t('clients').capitalize %></h3>
       <ul class="nav nav-pills nav-stacked">
-        <%= nav_link "Nuevo client", new_client_path %>
-        <%= nav_link "Ver clients", clients_path %>
-        <%= nav_link "Importar órdenes", import_file_work_orders_path %>
+        <%= nav_link t('new').capitalize + " " + t('client'), new_client_path %>
+        <%= nav_link t('show').capitalize + " " + t('clients'), clients_path %>
+        <%= nav_link t('import_wo').capitalize, import_file_work_orders_path %>
       </ul>
     </nav>
 
@@ -79,11 +79,10 @@
     <footer>
       <span class="left copyleft">
         <strong>2007&nbsp;-&nbsp;<%= Date.today.year %>.</strong>
-        Roberto Romero &
         <script type="text/javascript">
             emailE=('dev@' + 'karinaarena.com.ar')
             document.write(
-                    '<a id="mail" href="mailto:' + emailE + '">Karina Arena</a>'
+                    '<a id="mail" href="mailto:' + emailE + '">RRM & KPA</a>'
             )
         </script>.
       </span>

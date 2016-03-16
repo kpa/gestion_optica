@@ -2,9 +2,18 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   before_filter :authenticate
   protect_from_forgery
+  before_action :set_locale
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def default_url_options(options = {})
+    { locale: I18n.locale }.merge options
+  end
 
   def site_name
-    "Óptica"
+    "Óptica Arena"
   end
 
   def authenticate
