@@ -24,3 +24,5 @@
 public/images/favicon.xcf
 public/images/favicon-patillaless.xcf
 
+# Environment Variables Private
+/.env

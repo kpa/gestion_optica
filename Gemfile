@@ -45,3 +45,5 @@ gem 'byebug'
 
 gem 'devise'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
