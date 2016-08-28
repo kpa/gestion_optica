@@ -4,9 +4,9 @@
 }
 
 body {
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-    font-size: 8pt;
-    margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 8px;
+  margin: 0;
 }
 
 .header, .footer, .navigation, .sidenav, .title, .print_link, nav.navlist, nav.navbar, a.print, div.panel-footer,

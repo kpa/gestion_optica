@@ -1,115 +1,144 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    background-color: #fff;
-    height: 100%;
-}
-
-a {
-    color: #36C;
-}
-
-a:hover {
-    color: #06F;
+  background-color: #fff;
+  height: 100%;
 }
 
 body {
-    background: #EEE url(/images/bg.gif);
+  font-family: 'Roboto', cursive;
+}
+
+div.title h2, title {
+  text-transform: uppercase;
+  padding-top: 15px;
+}
+
+body {
+  background: #eee url(/images/bg.gif);
 }
 
 .logo {
-    background: url(/images/logo-optica.png) no-repeat center;
-    background-size: 25%;
-    height: 150px;
+  background: url(/images/logo-optica.png) no-repeat center;
+  background-size: 25%;
+  height: 150px;
+  padding-bottom: 10px;
 }
 
 code {
-    background: url(/images/bgcode.gif);
-    border: 1px solid #F0F0F0;
-    border-left: 6px solid #39F;
-    color: #555;
-    display: block;
-    font-style: normal;
-    font-size: 1.2em;
-    margin-bottom: 12px;
-    padding: 8px 10px;
-    white-space: pre;
+  background: url(/images/bgcode.gif);
+  border: 1px solid #F0F0F0;
+  border-left: 6px solid #39F;
+  color: #555;
+  display: block;
+  font-style: normal;
+  font-size: 1.2em;
+  margin-bottom: 12px;
+  padding: 8px 10px;
+  white-space: pre;
 }
 
 cite {
-    background: url(/images/quote.gif) no-repeat;
-    color: #666;
-    display: block;
-    padding-left: 28px;
-    font-style: normal;
+  background: url(/images/quote.gif) no-repeat;
+  color: #666;
+  display: block;
+  padding-left: 28px;
+  font-style: normal;
 }
 
-header {
-    background: url(/images/cloud_background.jpg) no-repeat;
-    padding: 10px 0 10px 0;
-    margin-bottom: 20px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
+div.round {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+div.header-session {
+  background-color: #808080;
+  padding: 10px 20px 10px 10px;
+}
+
+div.header-session a {
+  color: #ffffff;
 }
 
 .header {
-    background: url(/images/header.gif) repeat-x;
+  background-color: #303030;
+  margin-top: 10px;
 }
 
-.title h1 {
-    color: #ffffff;
-    font-weight: bold;
-    height: 100px;
-    text-align: center;
+.title h2 {
+  color: #ffffff;
+  font-weight: bold;
+  height: 60px;
+  text-align: center;
+  margin: 0;
 }
 
 .container {
-    background: #ffffff;
-    margin: 0 auto;
-    padding: 20px;
-    width: 100%;
+  background: #ffffff;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .navlist li.navbar-right {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 .navlist li.navitems:nth-last-of-type(-n+2) {
-    padding: 10px;
+  padding: 10px;
 }
 
 td.jobs a {
-    color: #ff0000;
-    font-weight: bold;
+  color: #ff0000;
+  font-weight: bold;
 }
 
-nav.menu-left {
-    margin: 20px 20px 20px 0;
-    padding: 0 10px 10px 10px;
+.menu nav.menu-left {
+  margin: 20px;
+  padding: 0 10px 10px 10px;
+  border-color: #E8E8E8;
+}
+
+.menu nav.menu-left li {
+  margin: 0;
+  padding: 0;
 }
 
 div.tblclient {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
-h3.page-title {
-    display: none;
+h2.page-title {
+  display: none;
 }
 
 div.footer {
-    background-color: #555555;
-    color: #ffffff;
+  background-color: #505050;
+  color: #fff;
+  padding: 10px;
 }
 
 div.footer a {
-    color: #ffffff;
+  color: #fff;
 }
 
 .copyleft {
-    background: url(/images/Copyleft-mini-white.png) no-repeat scroll 0% 50%;
-    padding-left: 20px;
+  background: url(/images/Copyleft-mini-white.png) no-repeat scroll 0% 50%;
+  padding-left: 20px;
+}
+
+.links {
+  padding: 0;
+  margin: 10px 0 5px 0;
+}
+
+.alert-box {
+  margin: 5px 0 0 0;
+}
+
+.main .main-login {
+  margin-top: 0;
 }

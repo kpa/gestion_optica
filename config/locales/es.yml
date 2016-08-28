@@ -10,3 +10,8 @@ es:
   management_system: "sistema de gestión"
   welcome: "bienvenido"
   log_out: "Cerrar sesión"
+  Edit profile: "Editar perfil"
+  Logout: "Cerrar sesión"
+  Login: "Iniciar sesión"
+  Sign up: "Registrarse"
+  Logged in as: "Conectado como"

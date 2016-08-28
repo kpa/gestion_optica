@@ -19,3 +19,8 @@
 
 # Ignore database config
 /config/database.yml
+
+# Logo images
+public/images/favicon.xcf
+public/images/favicon-patillaless.xcf
+

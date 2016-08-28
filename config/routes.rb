@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 GestionOpticaArena::Application.routes.draw do
+  devise_for :users
   resources :work_orders do
     collection do
       get :find_items

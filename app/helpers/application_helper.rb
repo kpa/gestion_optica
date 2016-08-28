@@ -1,11 +1,7 @@
 # -*- encoding : utf-8 -*-
 module ApplicationHelper
   def site_name
-    t("management_system").capitalize
-  end
-
-  def link_cierre_sesion
-    link_to t("log_out"), :controller => :user, :action=> :logout
+    t("management_system").mb_chars.upcase
   end
 
   # Muestra una caja con mensajes para el usuario.
@@ -27,13 +23,11 @@ module ApplicationHelper
     return raw(output)
   end
 
-  def current_user
-    return unless session[:user_id]
-    @current_user ||= User.find(session[:user_id])
-  end
-
-  def nav_link(link_text, link_path)
+  def nav_link(link_text, link_path, options = {})
     class_name = current_page?(link_path) ? 'active' : ''
+    if options[:class].present?
+      class_name = "#{class_name} #{options[:class]}"
+    end
 
     content_tag(:li, :class => class_name) do
       link_to link_text, link_path

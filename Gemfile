@@ -27,7 +27,7 @@ gem 'jquery-rails'
 # gem 'ruby-debug'
 
 # Annotate models
-gem "annotate", "~> 2.5.0"
+gem 'annotate', '~> 2.5.0'
 
 # Will paginate
 gem 'will_paginate', '~> 3.0.6'
@@ -37,6 +37,11 @@ gem 'jquery-ui-rails'
 gem 'protected_attributes'
 
 group :development do
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
+
+gem 'byebug'
+
+gem 'devise'
+
