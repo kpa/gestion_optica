@@ -1,0 +1,237 @@
+# Spanish translations for app package.
+# Copyright (C) 2016 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: app 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2016-08-28 20:23+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+
+msgid "Address:"
+msgstr ""
+
+msgid "City:"
+msgstr ""
+
+msgid "Client"
+msgstr "Cliente"
+
+msgid "Client|Address"
+msgstr "Domicilio"
+
+msgid "Client|City"
+msgstr "Localidad"
+
+msgid "Client|Comments"
+msgstr "Comentarios"
+
+msgid "Client|Email"
+msgstr "Correo electrónico"
+
+msgid "Client|Name"
+msgstr "Nombre"
+
+msgid "Client|Phone number"
+msgstr "Número de teléfono"
+
+msgid "Client|Surname"
+msgstr "Apellido"
+
+msgid "Email:"
+msgstr ""
+
+msgid "Eyeglasses type"
+msgstr "Tipo de anteojos"
+
+msgid "EyeglassesType|Name"
+msgstr "Nombre"
+
+msgid "Name:"
+msgstr "Nombre:"
+
+msgid "Observations:"
+msgstr ""
+
+msgid "Phone(s):"
+msgstr ""
+
+msgid "Prescription distance"
+msgstr "Distancia"
+
+msgid "PrescriptionDistance|Name"
+msgstr "Name"
+
+msgid "Surname:"
+msgstr ""
+
+msgid "User"
+msgstr "Usuario"
+
+msgid "User|Current sign in at"
+msgstr ""
+
+msgid "User|Current sign in ip"
+msgstr ""
+
+msgid "User|Email"
+msgstr "Correo electrónico"
+
+msgid "User|Encrypted password"
+msgstr ""
+
+msgid "User|Last sign in at"
+msgstr ""
+
+msgid "User|Last sign in ip"
+msgstr ""
+
+msgid "User|Remember created at"
+msgstr ""
+
+msgid "User|Reset password sent at"
+msgstr ""
+
+msgid "User|Reset password token"
+msgstr ""
+
+msgid "User|Sign in count"
+msgstr ""
+
+msgid "Work order"
+msgstr "Órden de trabajo"
+
+msgid "WorkOrder|Balance due"
+msgstr ""
+
+msgid "WorkOrder|Bifocal"
+msgstr ""
+
+msgid "WorkOrder|Comments"
+msgstr ""
+
+msgid "WorkOrder|Date"
+msgstr ""
+
+msgid "WorkOrder|Delivery date"
+msgstr ""
+
+msgid "WorkOrder|Description"
+msgstr ""
+
+msgid "WorkOrder|Distance frame"
+msgstr ""
+
+msgid "WorkOrder|Distance ipd"
+msgstr ""
+
+msgid "WorkOrder|Distance left axis"
+msgstr ""
+
+msgid "WorkOrder|Distance left cyl"
+msgstr ""
+
+msgid "WorkOrder|Distance left sph"
+msgstr ""
+
+msgid "WorkOrder|Distance lens color"
+msgstr ""
+
+msgid "WorkOrder|Distance lens type"
+msgstr ""
+
+msgid "WorkOrder|Distance right axis"
+msgstr ""
+
+msgid "WorkOrder|Distance right cyl"
+msgstr ""
+
+msgid "WorkOrder|Distance right sph"
+msgstr ""
+
+msgid "WorkOrder|Doctor name"
+msgstr ""
+
+msgid "WorkOrder|Height"
+msgstr ""
+
+msgid "WorkOrder|Intermediate frame"
+msgstr ""
+
+msgid "WorkOrder|Intermediate ipd"
+msgstr ""
+
+msgid "WorkOrder|Intermediate left axis"
+msgstr ""
+
+msgid "WorkOrder|Intermediate left cyl"
+msgstr ""
+
+msgid "WorkOrder|Intermediate left sph"
+msgstr ""
+
+msgid "WorkOrder|Intermediate lens color"
+msgstr ""
+
+msgid "WorkOrder|Intermediate lens type"
+msgstr ""
+
+msgid "WorkOrder|Intermediate right axis"
+msgstr ""
+
+msgid "WorkOrder|Intermediate right cyl"
+msgstr ""
+
+msgid "WorkOrder|Intermediate right sph"
+msgstr ""
+
+msgid "WorkOrder|Invoice"
+msgstr ""
+
+msgid "WorkOrder|Near frame"
+msgstr ""
+
+msgid "WorkOrder|Near ipd"
+msgstr ""
+
+msgid "WorkOrder|Near left axis"
+msgstr ""
+
+msgid "WorkOrder|Near left cyl"
+msgstr ""
+
+msgid "WorkOrder|Near left sph"
+msgstr ""
+
+msgid "WorkOrder|Near lens color"
+msgstr ""
+
+msgid "WorkOrder|Near lens type"
+msgstr ""
+
+msgid "WorkOrder|Near right axis"
+msgstr ""
+
+msgid "WorkOrder|Near right cyl"
+msgstr ""
+
+msgid "WorkOrder|Near right sph"
+msgstr ""
+
+msgid "WorkOrder|Order number"
+msgstr ""
+
+msgid "WorkOrder|Payment on account"
+msgstr ""
+
+msgid "WorkOrder|Prescription date"
+msgstr ""

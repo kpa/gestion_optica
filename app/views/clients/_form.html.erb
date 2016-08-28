@@ -1,30 +1,30 @@
 <table class="table table-striped">
   <tr>
-    <td><%= form.label :name, "Nombre:" %></td>
+    <td><%= form.label :name, _("Name:") %></td>
     <td><%= form.text_field :name, class: 'form-control' %></td>
   </tr>
   <tr>
-    <td><%= form.label :surname, "Apellido:" %></td>
+    <td><%= form.label :surname, _("Surname:") %></td>
     <td><%= form.text_field :surname, class: 'form-control' %></td>
   </tr>
   <tr>
-    <td><%= label_tag :client_address, "Domicilio:" %></td>
+    <td><%= label_tag :client_address, _("Address:") %></td>
     <td><%= form.text_field :address, class: 'form-control' %></td>
   </tr>
   <tr>
-    <td><%= label_tag :client_city, "Localidad:" %></td>
+    <td><%= label_tag :client_city, _("City:") %></td>
     <td><%= form.text_field :city, class: 'form-control' %></td>
   </tr>
   <tr>
-    <td><%= label_tag :client_phone_number, "Teléfonos:" %></td>
+    <td><%= label_tag :client_phone_number, _("Phone(s):") %></td>
     <td><%= form.text_field :phone_number, class: 'form-control' %></td>
   </tr>
   <tr>
-    <td><%= label_tag :email, "Correo electrónico:" %></td>
+    <td><%= label_tag :email, _("Email:") %></td>
     <td><%= form.text_field :email, class: 'form-control' %></td>
   </tr>
   <tr>
-    <td><%= label_tag :client_comments, "Observaciones:" %></td>
+    <td><%= label_tag :client_comments, _("Observations:") %></td>
     <td><%= form.text_field :comments, class: 'form-control' %></td>
   </tr>
 </table>
